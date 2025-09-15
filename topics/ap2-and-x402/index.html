@@ -840,16 +840,47 @@
 
 
 <h1 id="ap2-and-x402">AP2 and x402<a class="headerlink" href="#ap2-and-x402" title="Permanent link">&para;</a></h1>
-<p>The Agent Payments Protocol (AP2) and <a href="https://www.x402.org/">x402</a> are complementary. <strong>AP2 is designed to support emerging payment methods like x402</strong>, providing a secure and
-interoperable framework for AI agents to conduct transactions that may involve such digital currencies.</p>
+<p>The Agent Payments Protocol (AP2) and <a href="https://www.x402.org/">x402</a> are
+complementary. <strong>AP2 is designed to support emerging payment methods like
+x402</strong>, providing a secure and interoperable framework for AI agents to conduct
+transactions that may involve such digital currencies.</p>
+<!-- prettier-ignore-start -->
+<div class="admonition tip">
+<p class="admonition-title">Dedicated Repo</p>
+<p>Check out
+<a href="https://github.com/google-agentic-commerce/a2a-x402/">google-agentic-commerce/a2a-x402</a>
+which is an implementation of A2A in conjunction with the x402 standard. We
+will be aligning this closely with AP2 over time to make it easy to compose
+solutions which include all payment methods, including stablecoins.</p>
+</div>
+<!-- prettier-ignore-end -->
+
 <h2 id="payment-agnosticism-and-future-proof-design">Payment Agnosticism and Future-Proof Design<a class="headerlink" href="#payment-agnosticism-and-future-proof-design" title="Permanent link">&para;</a></h2>
-<p>AP2 is an open, interoperable protocol specifically engineered to enable AI agents to securely interact and complete payments autonomously. A core principle of AP2 is its payment-method-agnostic and future-proof design. The initial version supports common "pull" payment methods like credit/debit cards, with a roadmap to include "push" payments like real-time bank transfers (e.g., UPI and PIX) and digital currencies. This flexible approach ensures that AP2 can evolve to support various ways people pay.</p>
+<p>AP2 is an open, interoperable protocol specifically engineered to enable AI
+agents to securely interact and complete payments autonomously. A core principle
+of AP2 is its payment-method-agnostic and future-proof design. The initial
+version supports common "pull" payment methods like credit/debit cards, with a
+roadmap to include "push" payments like real-time bank transfers (e.g., UPI and
+PIX) and digital currencies. This flexible approach ensures that AP2 can evolve
+to support various ways people pay.</p>
 <h2 id="engineering-trust-for-agentic-transactions">Engineering Trust for Agentic Transactions<a class="headerlink" href="#engineering-trust-for-agentic-transactions" title="Permanent link">&para;</a></h2>
-<p>AP2 introduces key concepts like <strong>Verifiable Credentials (VCs)</strong>—including Intent Mandates, Cart Mandates, and Payment Mandates—which are cryptographically signed digital objects that capture user authorization and intent. These VCs provide a non-repudiable audit trail for every transaction, establishing a clear framework for accountability and addressing the "crisis of trust" inherent in autonomous AI agent payments. This secure foundation is crucial for any payment method where validating agent authority and user intent is paramount.</p>
+<p>AP2 introduces key concepts like <strong>Verifiable Credentials (VCs)</strong>—including
+Intent Mandates, Cart Mandates, and Payment Mandates—which are cryptographically
+signed digital objects that capture user authorization and intent. These VCs
+provide a non-repudiable audit trail for every transaction, establishing a clear
+framework for accountability and addressing the "crisis of trust" inherent in
+autonomous AI agent payments. This secure foundation is crucial for any payment
+method where validating agent authority and user intent is paramount.</p>
 <h2 id="industry-collaboration-and-implementation">Industry Collaboration and Implementation<a class="headerlink" href="#industry-collaboration-and-implementation" title="Permanent link">&para;</a></h2>
-<p>AP2 is being developed in collaboration with prominent partners in the payments and web3 ecosystems, including Coinbase, CrossMint, EigenLayer, Ethereum Foundation, Mesh, Metamask, and Mysten. Shared samples are currently being built to demonstrate AP2 and x402 working together in practical implementations.</p>
+<p>AP2 is being developed in collaboration with prominent partners in the payments
+and web3 ecosystems, including Coinbase, CrossMint, EigenLayer, Ethereum
+Foundation, Mesh, Metamask, and Mysten. Shared samples are currently being built
+to demonstrate AP2 and x402 working together in practical implementations.</p>
 <hr />
-<p>In essence, <strong>AP2 provides the overarching secure, interoperable protocol and trust mechanisms necessary for AI agents to make payments</strong>, while x402 represents a type of emerging payment method that AP2 is specifically designed to accommodate and support securely within the agentic commerce ecosystem.</p>
+<p>In essence, <strong>AP2 provides the overarching secure, interoperable protocol and
+trust mechanisms necessary for AI agents to make payments</strong>, while x402
+represents a type of emerging payment method that AP2 is specifically designed
+to accommodate and support securely within the agentic commerce ecosystem.</p>
 
 
 

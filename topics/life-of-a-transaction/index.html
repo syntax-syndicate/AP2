@@ -822,31 +822,61 @@
 
 
 <h1 id="life-of-a-transaction">Life of a Transaction<a class="headerlink" href="#life-of-a-transaction" title="Permanent link">&para;</a></h1>
-<p>The Agent Payments Protocol (AP2) defines clear flows for different user scenarios. The two primary modalities are "Human Present" and "Human Not Present."</p>
+<p>The Agent Payments Protocol (AP2) defines clear flows for different user
+scenarios. The two primary modalities are "Human Present" and "Human Not
+Present."</p>
 <h2 id="human-present-transaction">Human Present Transaction<a class="headerlink" href="#human-present-transaction" title="Permanent link">&para;</a></h2>
-<p>This journey applies when a user delegates a task to an agent and is available to authorize the final payment.</p>
+<p>This journey applies when a user delegates a task to an agent and is available
+to authorize the final payment.</p>
 <p>The typical flow is as follows:</p>
 <ol>
-<li><strong>Setup</strong>: The user may establish a connection between their preferred Shopping Agent and a supported Credentials Provider (e.g., their digital wallet).</li>
-<li><strong>Discovery &amp; Negotiation</strong>: The user gives a shopping task to their agent. The agent interacts with one or more merchants to assemble a cart that satisfies the request.</li>
-<li><strong>Merchant Validates Cart</strong>: The user authorizes a set of items for purchase. The merchant signs the final cart, signaling their commitment to fulfill it.</li>
-<li><strong>Provide Payment Methods</strong>: The Shopping Agent requests an applicable payment method from the Credentials Provider.</li>
-<li><strong>Show Cart</strong>: The agent presents the final, merchant-signed cart and the selected payment method to the user in a trusted interface.</li>
-<li><strong>Sign &amp; Pay</strong>: The user's approval generates a cryptographically signed <strong>Cart Mandate</strong>, which contains the explicit details of the purchase. This mandate is shared with the merchant as evidence. A separate <strong>Payment Mandate</strong> is prepared for the payment network.</li>
-<li><strong>Payment Execution</strong>: The payment details are conveyed to the Credentials Provider and Merchant to complete the transaction.</li>
-<li><strong>Send to Issuer</strong>: The merchant or their processor routes the transaction to the payment network and issuer, appending the Payment Mandate to provide visibility into the agentic nature of the transaction.</li>
-<li><strong>Challenge (If Necessary)</strong>: Any party (issuer, merchant, etc.) can issue a challenge (like 3D Secure). The user must complete the challenge on a trusted surface.</li>
-<li><strong>Authorization</strong>: The issuer approves the payment, and the confirmation is sent to the user and merchant so the order can be fulfilled.</li>
+<li><strong>Setup</strong>: The user may establish a connection between their preferred
+   Shopping Agent and a supported Credentials Provider (e.g., their digital
+   wallet).</li>
+<li><strong>Discovery &amp; Negotiation</strong>: The user gives a shopping task to their agent.
+   The agent interacts with one or more merchants to assemble a cart that
+   satisfies the request.</li>
+<li><strong>Merchant Validates Cart</strong>: The user authorizes a set of items for purchase.
+   The merchant signs the final cart, signaling their commitment to fulfill it.</li>
+<li><strong>Provide Payment Methods</strong>: The Shopping Agent requests an applicable
+   payment method from the Credentials Provider.</li>
+<li><strong>Show Cart</strong>: The agent presents the final, merchant-signed cart and the
+   selected payment method to the user in a trusted interface.</li>
+<li><strong>Sign &amp; Pay</strong>: The user's approval generates a cryptographically signed
+   <strong>Cart Mandate</strong>, which contains the explicit details of the purchase. This
+   mandate is shared with the merchant as evidence. A separate <strong>Payment
+   Mandate</strong> is prepared for the payment network.</li>
+<li><strong>Payment Execution</strong>: The payment details are conveyed to the Credentials
+   Provider and Merchant to complete the transaction.</li>
+<li><strong>Send to Issuer</strong>: The merchant or their processor routes the transaction to
+   the payment network and issuer, appending the Payment Mandate to provide
+   visibility into the agentic nature of the transaction.</li>
+<li><strong>Challenge (If Necessary)</strong>: Any party (issuer, merchant, etc.) can issue a
+   challenge (like 3D Secure). The user must complete the challenge on a trusted
+   surface.</li>
+<li><strong>Authorization</strong>: The issuer approves the payment, and the confirmation is
+    sent to the user and merchant so the order can be fulfilled.</li>
 </ol>
 <h2 id="human-not-present-transaction">Human Not Present Transaction<a class="headerlink" href="#human-not-present-transaction" title="Permanent link">&para;</a></h2>
-<p>This journey is for scenarios where the user wants the agent to proceed with a payment in their absence (e.g., "buy these shoes when the price drops below $100").</p>
+<p>This journey is for scenarios where the user wants the agent to proceed with a
+payment in their absence (e.g., "buy these shoes when the price drops below
+$100").</p>
 <p>The key differences from the Human Present flow are:</p>
 <ol>
-<li><strong>Intent is Captured</strong>: Instead of approving a final cart, the user approves the agent's <em>understanding</em> of their intent. The user's in-session authentication (e.g., biometric) creates a signed <strong>Intent Mandate</strong>.</li>
-<li><strong>Intent Mandate is Used</strong>: This mandate, which includes the natural language description of the user's goal, is shared with the merchant, who can then decide if they can fulfill the request.</li>
-<li><strong>Merchant Can Force User Confirmation</strong>: If the merchant is unsure about their ability to fulfill the request based on the Intent Mandate, they can require the user to return to the session to confirm details. This might involve the user selecting from a set of final options (creating a Cart Mandate) or providing more information (updating the Intent Mandate).</li>
+<li><strong>Intent is Captured</strong>: Instead of approving a final cart, the user approves
+   the agent's <em>understanding</em> of their intent. The user's in-session
+   authentication (e.g., biometric) creates a signed <strong>Intent Mandate</strong>.</li>
+<li><strong>Intent Mandate is Used</strong>: This mandate, which includes the natural language
+   description of the user's goal, is shared with the merchant, who can then
+   decide if they can fulfill the request.</li>
+<li><strong>Merchant Can Force User Confirmation</strong>: If the merchant is unsure about
+   their ability to fulfill the request based on the Intent Mandate, they can
+   require the user to return to the session to confirm details. This might
+   involve the user selecting from a set of final options (creating a Cart
+   Mandate) or providing more information (updating the Intent Mandate).</li>
 </ol>
-<p>This ensures merchants have confidence in the user's intent while still allowing for autonomous execution of tasks.</p>
+<p>This ensures merchants have confidence in the user's intent while still allowing
+for autonomous execution of tasks.</p>
 
 
 
