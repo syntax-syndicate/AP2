@@ -14,6 +14,10 @@
         <link rel="canonical" href="https://ap2-protocol.org/a2a-extension/">
       
       
+        <link rel="prev" href="../specification/">
+      
+      
+        <link rel="next" href="../glossary/">
       
       
       <link rel="icon" href="../assets/ap2-logo-black.svg">
@@ -21,7 +25,7 @@
     
     
       
-        <title>AP2 A2A Extension Specification - AP2 - Agent Payments Protocol Documentation</title>
+        <title>A2A extension for AP2 - AP2 - Agent Payments Protocol Documentation</title>
       
     
     
@@ -126,7 +130,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#ap2-a2a-extension-specification" class="md-skip">
+        <a href="#a2a-extension-for-ap2" class="md-skip">
           Skip to content
         </a>
       
@@ -161,7 +165,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              AP2 A2A Extension Specification
+              A2A extension for AP2
             
           </span>
         </div>
@@ -516,12 +520,145 @@
   
   
   <span class="md-ellipsis">
-    Specification
+    AP2 specification
     
   </span>
   
 
       </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    A2A extension for AP2
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    A2A extension for AP2
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#extension-uri" class="md-nav__link">
+    <span class="md-ellipsis">
+      Extension URI
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#agent-ap2-role" class="md-nav__link">
+    <span class="md-ellipsis">
+      Agent AP2 Role
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#agentcard-extension-object" class="md-nav__link">
+    <span class="md-ellipsis">
+      AgentCard Extension Object
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ap2-data-type-containers" class="md-nav__link">
+    <span class="md-ellipsis">
+      AP2 Data Type Containers
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="AP2 Data Type Containers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#intentmandate-message" class="md-nav__link">
+    <span class="md-ellipsis">
+      IntentMandate Message
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cartmandate-artifact" class="md-nav__link">
+    <span class="md-ellipsis">
+      CartMandate Artifact
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paymentmandate-message" class="md-nav__link">
+    <span class="md-ellipsis">
+      PaymentMandate Message
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -637,10 +774,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
         
           
-          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
             
   
   
@@ -653,8 +790,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_8">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
             <span class="md-nav__icon md-icon"></span>
             Samples
           </label>
@@ -850,9 +987,13 @@
   
 
 
-<h1 id="ap2-a2a-extension-specification">AP2 A2A Extension Specification<a class="headerlink" href="#ap2-a2a-extension-specification" title="Permanent link">&para;</a></h1>
-<p>This extension to the A2A protocol enables performing the Agent Payments
-Protocol (AP2) over A2A.</p>
+<h1 id="a2a-extension-for-ap2">A2A Extension for AP2<a class="headerlink" href="#a2a-extension-for-ap2" title="Permanent link">&para;</a></h1>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>This is an <a href="https://a2a-protocol.org/latest/topics/extensions/">Agent2Agent (A2A) extension</a>
+implementing the Agent Payments Protocol (AP2).</p>
+<p><code>v0.1-alpha</code> (see <a href="../roadmap/">roadmap</a>)</p>
+</div>
 <h2 id="extension-uri">Extension URI<a class="headerlink" href="#extension-uri" title="Permanent link">&para;</a></h2>
 <p>The URI for this extension is
 <code>https://github.com/google-agentic-commerce/ap2/tree/v0.1</code>.</p>
@@ -1120,6 +1261,44 @@ the <code>PaymentMandate</code> schema.</p>
       
         <footer class="md-footer">
   
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../specification/" class="md-footer__link md-footer__link--prev" aria-label="Previous: AP2 specification">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                AP2 specification
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../glossary/" class="md-footer__link md-footer__link--next" aria-label="Next: Glossary">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Glossary
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
     
   
   <div class="md-footer-meta md-typeset">
