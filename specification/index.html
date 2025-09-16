@@ -1805,213 +1805,534 @@
 
 <h1 id="agent-payments-protocol-ap2-building-a-secure-and-interoperable-future-for-ai-driven-payments">Agent Payments Protocol (AP2): Building a Secure and Interoperable Future for AI-Driven Payments<a class="headerlink" href="#agent-payments-protocol-ap2-building-a-secure-and-interoperable-future-for-ai-driven-payments" title="Permanent link">&para;</a></h1>
 <h2 id="executive-summary">Executive Summary<a class="headerlink" href="#executive-summary" title="Permanent link">&para;</a></h2>
-<p>AI agents will redefine the landscape of digital commerce, promising unprecedented convenience, personalization, and efficiency. However, this shift exposes a fundamental challenge: the world's existing payments infrastructure was not designed for a future where autonomous, non-human agents act on a user's behalf, or transact with each other. Current payment protocols, built on the assumption of direct human initiated interaction with trusted interfaces, lack the mechanisms to securely validate an agent's authenticity and authority to transact. This exposes a long standing defense against online fraud, creates ambiguity around transaction liability, and threatens adoption, not only of agent commerce, but also negatively impacts existing digital commerce.</p>
-<p>Without a common, trusted protocol, the industry faces the prospect of a fragmented and insecure ecosystem, characterized by proprietary, siloed solutions that increase complexity for merchants, create friction for users, and prevent financial institutions from uniformly assessing risk. To address this gap, this protocol proposes an open, interoperable protocol for agent payments. This protocol, designed as an extension for emerging agent-to-agent (A2A) and model-context protocols (MCP), establishes a secure and reliable framework for AI-driven commerce.</p>
+<p>AI agents will redefine the landscape of digital commerce, promising
+unprecedented convenience, personalization, and efficiency. However, this shift
+exposes a fundamental challenge: the world's existing payments infrastructure
+was not designed for a future where autonomous, non-human agents act on a user's
+behalf, or transact with each other. Current payment protocols, built on the
+assumption of direct human initiated interaction with trusted interfaces, lack
+the mechanisms to securely validate an agent's authenticity and authority to
+transact. This exposes a long standing defense against online fraud, creates
+ambiguity around transaction liability, and threatens adoption, not only of
+agent commerce, but also negatively impacts existing digital commerce.</p>
+<p>Without a common, trusted protocol, the industry faces the prospect of a
+fragmented and insecure ecosystem, characterized by proprietary, siloed
+solutions that increase complexity for merchants, create friction for users, and
+prevent financial institutions from uniformly assessing risk. To address this
+gap, this protocol proposes an open, interoperable protocol for agent payments.
+This protocol, designed as an extension for emerging agent-to-agent (A2A) and
+model-context protocols (MCP), establishes a secure and reliable framework for
+AI-driven commerce.</p>
 <h2 id="an-invitation-to-collaborate-roadmap-and-community-engagement">An Invitation to Collaborate: Roadmap and Community Engagement<a class="headerlink" href="#an-invitation-to-collaborate-roadmap-and-community-engagement" title="Permanent link">&para;</a></h2>
-<p>The success of this foundational protocol for agent payments depends on broad industry participation, feedback, and public support. We invite all stakeholders in the commerce and payments ecosystem to join in refining and building this open protocol.</p>
+<p>The success of this foundational protocol for agent payments depends on broad
+industry participation, feedback, and public support. We invite all stakeholders
+in the commerce and payments ecosystem to join in refining and building this
+open protocol.</p>
 <h3 id="proposed-roadmap">Proposed Roadmap<a class="headerlink" href="#proposed-roadmap" title="Permanent link">&para;</a></h3>
-<p>The development and rollout of the protocol are envisioned in a phased approach, allowing the ecosystem to build, test, and adopt capabilities incrementally.</p>
+<p>The development and rollout of the protocol are envisioned in a phased approach,
+allowing the ecosystem to build, test, and adopt capabilities incrementally.</p>
 <ul>
-<li><strong>V0.1</strong>: The initial specification focuses on establishing the core architecture and enabling the most common use cases. Key features include:<ul>
+<li><strong>V0.1</strong>: The initial specification focuses on establishing the core
+    architecture and enabling the most common use cases. Key features include:<ul>
 <li>Support for "pull" payment methods (e.g., credit/debit cards)</li>
-<li>Well-defined data payloads to support transparent accountability based on the VC framework</li>
+<li>Well-defined data payloads to support transparent accountability based
+    on the VC framework</li>
 <li>Support for human-present scenarios</li>
 <li>Support for user and merchant-initiated step-up challenges</li>
-<li>Detailed sequence diagram and reference implementation using <a href="https://a2a-protocol.org/">A2A protocol</a></li>
+<li>Detailed sequence diagram and reference implementation using
+    <a href="https://a2a-protocol.org/">A2A protocol</a></li>
 </ul>
 </li>
-<li><strong>V1.x</strong>: Subsequent versions will expand the protocol's capabilities based on community feedback and evolving needs. Potential areas of focus include:<ul>
-<li>Full support for "push" payments and all payment methods (e.g., real-time bank transfers, e-wallets etc.)</li>
+<li><strong>V1.x</strong>: Subsequent versions will expand the protocol's capabilities based
+    on community feedback and evolving needs. Potential areas of focus include:<ul>
+<li>Full support for "push" payments and all payment methods (e.g.,
+    real-time bank transfers, e-wallets etc.)</li>
 <li>Standardized flows for recurring payments and subscriptions</li>
 <li>Support for human-not-present scenarios</li>
 <li>Detailed sequence diagrams for MCP-based implementations</li>
 </ul>
 </li>
-<li><strong>Long-Term Vision</strong>: Longer term, we plan the protocol to incorporate more intelligence and flexibility, including:<ul>
+<li><strong>Long-Term Vision</strong>: Longer term, we plan the protocol to incorporate more
+    intelligence and flexibility, including:<ul>
 <li>Native support for complex, multi-merchant transaction topologies</li>
 <li>Support for real-time negotiations between buyer and seller agents</li>
 </ul>
 </li>
 </ul>
-<p>We believe that a collaborative approach is essential to creating a protocol that is robust, secure, and meets the diverse needs of the entire ecosystem. We actively seek feedback and critique on the github repository through issues and discussions.</p>
+<p>We believe that a collaborative approach is essential to creating a protocol
+that is robust, secure, and meets the diverse needs of the entire ecosystem. We
+actively seek feedback and critique on the github repository through issues and
+discussions.</p>
 <h2 id="section-1-the-new-frontier-of-commerce-why-agent-payments-require-a-foundational-protocol">Section 1: The New Frontier of Commerce: Why Agent Payments Require a Foundational Protocol<a class="headerlink" href="#section-1-the-new-frontier-of-commerce-why-agent-payments-require-a-foundational-protocol" title="Permanent link">&para;</a></h2>
 <h3 id="11-the-rise-of-agent-commerce">1.1 The Rise of Agent Commerce<a class="headerlink" href="#11-the-rise-of-agent-commerce" title="Permanent link">&para;</a></h3>
-<p>The evolution of digital interaction is entering a new phase, moving beyond direct manipulation of UIs to conversational and delegated task execution. AI agents are rapidly becoming primary actors, capable of understanding complex user requests and executing multi-step tasks autonomously. In commerce, this translates into a paradigm shift where agents will manage everything from routine purchases and subscription management to complex product research, price negotiation, and dynamic order bundling across multiple vendors. This new era of agent commerce promises to unlock immense value, offering users a hyper-personalized and frictionless shopping experience while providing merchants with new, intelligent channels to reach and serve customers.</p>
+<p>The evolution of digital interaction is entering a new phase, moving beyond
+direct manipulation of UIs to conversational and delegated task execution. AI
+agents are rapidly becoming primary actors, capable of understanding complex
+user requests and executing multi-step tasks autonomously. In commerce, this
+translates into a paradigm shift where agents will manage everything from
+routine purchases and subscription management to complex product research, price
+negotiation, and dynamic order bundling across multiple vendors. This new era of
+agent commerce promises to unlock immense value, offering users a
+hyper-personalized and frictionless shopping experience while providing
+merchants with new, intelligent channels to reach and serve customers.</p>
 <h3 id="12-the-foundational-gap-a-crisis-of-trust-and-liability">1.2 The Foundational Gap: A Crisis of Trust and Liability<a class="headerlink" href="#12-the-foundational-gap-a-crisis-of-trust-and-liability" title="Permanent link">&para;</a></h3>
-<p>Despite its promise, the rise of agent commerce exposes a critical vulnerability in the existing digital payments infrastructure. Today's payment protocols are designed around the principle of a human user directly interacting with a trusted interface, such as a merchant's website or a payment provider's app. Authentication, authorization, and liability are all predicated on this direct human involvement.</p>
-<p>Autonomous agents shatter this assumption. When an agent initiates a payment, fundamental questions arise that current systems are ill-equipped to answer:</p>
+<p>Despite its promise, the rise of agent commerce exposes a critical vulnerability
+in the existing digital payments infrastructure. Today's payment protocols are
+designed around the principle of a human user directly interacting with a
+trusted interface, such as a merchant's website or a payment provider's app.
+Authentication, authorization, and liability are all predicated on this direct
+human involvement.</p>
+<p>Autonomous agents shatter this assumption. When an agent initiates a payment,
+fundamental questions arise that current systems are ill-equipped to answer:</p>
 <ul>
-<li>Authorization &amp; Auditability: What verifiable proof demonstrates that the user granted the agent the specific authority to make this particular purchase?</li>
-<li>Authenticity of Intent: How can a merchant or payment processor be certain that the agent's request accurately reflects the human user's true intent?</li>
-<li>Agent Error and "Hallucination": How does the system protect against agent errors, such as misinterpreting a user's request or "hallucinating" product details, which could lead to incorrect purchases?</li>
-<li>Accountability: In the event of a fraudulent or erroneous transaction, who is accountable? The user who delegated the task? The developer of the shopping agent? The merchant who accepted the order? Or the payment network that processed it?</li>
+<li>Authorization &amp; Auditability: What verifiable proof demonstrates that the
+    user granted the agent the specific authority to make this particular
+    purchase?</li>
+<li>Authenticity of Intent: How can a merchant or payment processor be certain
+    that the agent's request accurately reflects the human user's true intent?</li>
+<li>Agent Error and "Hallucination": How does the system protect against agent
+    errors, such as misinterpreting a user's request or "hallucinating" product
+    details, which could lead to incorrect purchases?</li>
+<li>Accountability: In the event of a fraudulent or erroneous transaction, who
+    is accountable? The user who delegated the task? The developer of the
+    shopping agent? The merchant who accepted the order? Or the payment network
+    that processed it?</li>
 </ul>
-<p>This ambiguity creates a crisis of trust. Without a robust framework to validate agent authority and assign liability clearly, financial institutions may be hesitant to approve agent-initiated transactions, merchants will be exposed to unacceptable levels of fraud risk, and users will be reluctant to delegate financial authority to agents.</p>
+<p>This ambiguity creates a crisis of trust. Without a robust framework to validate
+agent authority and assign liability clearly, financial institutions may be
+hesitant to approve agent-initiated transactions, merchants will be exposed to
+unacceptable levels of fraud risk, and users will be reluctant to delegate
+financial authority to agents.</p>
 <h3 id="13-the-risk-of-a-fragmented-ecosystem">1.3 The Risk of a Fragmented Ecosystem<a class="headerlink" href="#13-the-risk-of-a-fragmented-ecosystem" title="Permanent link">&para;</a></h3>
-<p>In the absence of a universally adopted protocol, the industry will inevitably move toward a patchwork of proprietary, closed-loop solutions. Large retailers might develop bespoke integrations for their specific agents, and payment providers might create siloed ecosystems that do not interoperate. This fragmentation would have severe negative consequences:</p>
+<p>In the absence of a universally adopted protocol, the industry will inevitably
+move toward a patchwork of proprietary, closed-loop solutions. Large retailers
+might develop bespoke integrations for their specific agents, and payment
+providers might create siloed ecosystems that do not interoperate. This
+fragmentation would have severe negative consequences:</p>
 <ul>
-<li>For Users: A confusing and inconsistent experience, where their preferred agent may only work with a limited set of merchants or payment methods.</li>
-<li>For Merchants: High development and maintenance costs to support multiple, non-standard agent payment integrations, creating a significant barrier to entry for small and medium-sized businesses.</li>
-<li>For the Payments Ecosystem: An inability to collect common signals across all agent transactions in order to consistently mitigate fraud, leading to higher costs and suppressed transaction approval rates.</li>
+<li>For Users: A confusing and inconsistent experience, where their preferred
+    agent may only work with a limited set of merchants or payment methods.</li>
+<li>For Merchants: High development and maintenance costs to support multiple,
+    non-standard agent payment integrations, creating a significant barrier to
+    entry for small and medium-sized businesses.</li>
+<li>For the Payments Ecosystem: An inability to collect common signals across
+    all agent transactions in order to consistently mitigate fraud, leading to
+    higher costs and suppressed transaction approval rates.</li>
 </ul>
-<p>An open, interoperable protocol is the most viable path forward. It creates a common language for all participants. It allows for additional data points to be shared about the transaction in a way that wasn’t possible before and ensures that any compliant agent can securely transact with any compliant merchant, fostering a competitive and innovative marketplace.</p>
+<p>An open, interoperable protocol is the most viable path forward. It creates a
+common language for all participants. It allows for additional data points to be
+shared about the transaction in a way that wasn’t possible before and ensures
+that any compliant agent can securely transact with any compliant merchant,
+fostering a competitive and innovative marketplace.</p>
 <h2 id="section-2-guiding-principles-for-a-trusted-agent-economy">Section 2: Guiding Principles for a Trusted Agent Economy<a class="headerlink" href="#section-2-guiding-principles-for-a-trusted-agent-economy" title="Permanent link">&para;</a></h2>
-<p>The design of this proposed protocol is rooted in a set of core principles intended to build a sustainable, secure, and equitable ecosystem for all participants. These principles serve as the philosophical foundation for the technical architecture that follows.</p>
+<p>The design of this proposed protocol is rooted in a set of core principles
+intended to build a sustainable, secure, and equitable ecosystem for all
+participants. These principles serve as the philosophical foundation for the
+technical architecture that follows.</p>
 <h3 id="21-openness-and-interoperability">2.1 Openness and Interoperability<a class="headerlink" href="#21-openness-and-interoperability" title="Permanent link">&para;</a></h3>
-<p>This protocol is proposed as a non-proprietary, open extension for existing and future agent-to-agent (A2A) and model-context protocol (MCP). The goal is to provide a common, interoperable payments layer that can be adopted by any ecosystem player. This approach fosters a healthy, competitive environment where developers can innovate on agent capabilities, merchants can reach the broadest possible audience, and users can choose the combination of agents and services that best suits their needs.</p>
+<p>This protocol is proposed as a non-proprietary, open extension for existing and
+future agent-to-agent (A2A) and model-context protocol (MCP). The goal is to
+provide a common, interoperable payments layer that can be adopted by any
+ecosystem player. This approach fosters a healthy, competitive environment where
+developers can innovate on agent capabilities, merchants can reach the broadest
+possible audience, and users can choose the combination of agents and services
+that best suits their needs.</p>
 <h3 id="22-user-control-and-privacy-by-design">2.2 User Control and Privacy by Design<a class="headerlink" href="#22-user-control-and-privacy-by-design" title="Permanent link">&para;</a></h3>
-<p>The user must always be the ultimate authority. The protocol is designed to ensure users have granular control and transparent visibility over their agents' activities.</p>
-<p>Privacy is a core design tenet. The protocol is designed to protect sensitive user information, including the content of their conversational prompts and personal payment details. Through payload encryption and a role-based architecture, agents involved in the shopping process are prevented from accessing sensitive payment card industry (PCI) data or other personally identifiable information (PII), which is handled exclusively by the specialized entities and the secure elements of the payment infrastructure.</p>
+<p>The user must always be the ultimate authority. The protocol is designed to
+ensure users have granular control and transparent visibility over their agents'
+activities.</p>
+<p>Privacy is a core design tenet. The protocol is designed to protect sensitive
+user information, including the content of their conversational prompts and
+personal payment details. Through payload encryption and a role-based
+architecture, agents involved in the shopping process are prevented from
+accessing sensitive payment card industry (PCI) data or other personally
+identifiable information (PII), which is handled exclusively by the specialized
+entities and the secure elements of the payment infrastructure.</p>
 <h3 id="23-verifiable-intent-not-inferred-action">2.3 Verifiable Intent, Not Inferred Action<a class="headerlink" href="#23-verifiable-intent-not-inferred-action" title="Permanent link">&para;</a></h3>
-<p>Trust in an AI Agent system cannot be based only on interpreting the ambiguous, probabilistic outputs of a large language model. Transactions must be anchored to deterministic, non-repudiable proof of intent from all parties. This principle directly addresses the risk of agent "hallucination" and misinterpretation.</p>
+<p>Trust in an AI Agent system cannot be based only on interpreting the ambiguous,
+probabilistic outputs of a large language model. Transactions must be anchored
+to deterministic, non-repudiable proof of intent from all parties. This
+principle directly addresses the risk of agent "hallucination" and
+misinterpretation.</p>
 <h3 id="24-clear-transaction-accountability">2.4 Clear Transaction Accountability<a class="headerlink" href="#24-clear-transaction-accountability" title="Permanent link">&para;</a></h3>
-<p>For the payments ecosystem to embrace agent commerce, there can be no ambiguity regarding transaction accountability. A primary objective of this protocol is to provide supporting evidence that helps payment networks establish accountability and liability principles. This clarity is table stakes for gaining the confidence and participation of merchants, issuers, and payment networks.</p>
+<p>For the payments ecosystem to embrace agent commerce, there can be no ambiguity
+regarding transaction accountability. A primary objective of this protocol is to
+provide supporting evidence that helps payment networks establish accountability
+and liability principles. This clarity is table stakes for gaining the
+confidence and participation of merchants, issuers, and payment networks.</p>
 <h2 id="section-3-architectural-overview-a-role-based-ecosystem-for-secure-transactions">Section 3: Architectural Overview: A Role-Based Ecosystem for Secure Transactions<a class="headerlink" href="#section-3-architectural-overview-a-role-based-ecosystem-for-secure-transactions" title="Permanent link">&para;</a></h2>
-<p>To achieve its goals of security, interoperability, and clear accountability, the proposed protocol defines a role-based architecture. Each actor in the ecosystem has a distinct and well-defined set of responsibilities, ensuring a separation of concerns that enhances security and simplifies integration.</p>
+<p>To achieve its goals of security, interoperability, and clear accountability,
+the proposed protocol defines a role-based architecture. Each actor in the
+ecosystem has a distinct and well-defined set of responsibilities, ensuring a
+separation of concerns that enhances security and simplifies integration.</p>
 <h3 id="31-the-actors">3.1 The Actors<a class="headerlink" href="#31-the-actors" title="Permanent link">&para;</a></h3>
 <p>The agent payments ecosystem consists of the following key roles:</p>
 <ul>
-<li><strong>The User</strong>: The human individual who initiates a commerce task by delegating it to their Agent. The User is the ultimate source of intent and financial authority.</li>
-<li><strong>The User Agent (UA) or Shopping Agent (SA)</strong> : This is the AI Surface that the user directly interacts with. The User Agent (UA) may delegate the commerce task to another AI Agent (say, the Shopping Agent or “SA”). Its primary functions include understanding the user's needs, discovering products, interacting with merchants to build a cart, and obtaining the user's signed authorization to initiate a payment related task.</li>
-<li><strong>The User’s Credentials Provider (CP)</strong>: A specialized entity responsible for the secure management and execution of payments credentials (e.g. a digital Wallet). It holds knowledge of the User's available payment methods, gets user consent (if deemed necessary) to share credentials with the SA, selects the optimal payment method based on user preferences and transaction context, and handles payment scenarios like errors, declines and transaction challenges gracefully.</li>
-<li><strong>The Remote or Merchant Endpoint (ME)</strong>: A web interface, MCP endpoint or an AI agent operating on behalf of an entity which expects to receive a payment in return for offering products or services. Its objectives are to showcase products/services, provide information, negotiate the contents of a cart with a Shopping Agent, and confirm that it has enough information about the user’s intent to deliver the right products/services.</li>
-<li><strong>The Merchant Payment Processor Endpoint (MPP)</strong>: The Merchant Payment Processor (web, API, MCP or AI Agent) may be the same as the Merchant if the Merchant has all the capabilities to fulfill this role. The MPP constructs the txn auth message which can be sent to the payment ecosystem for authorization.</li>
-<li><strong>Network and Issuer</strong>: The provider of the payment network and issuer of payment credentials to the human user. The Credentials Provider may need to interact with the network for issuance of specific tokens for AI agent transactions and the Merchant/PSP may submit these transactions for authorization to issuers via the networks.</li>
+<li><strong>The User</strong>: The human individual who initiates a commerce task by
+    delegating it to their Agent. The User is the ultimate source of intent and
+    financial authority.</li>
+<li><strong>The User Agent (UA) or Shopping Agent (SA)</strong> : This is the AI Surface that
+    the user directly interacts with. The User Agent (UA) may delegate the
+    commerce task to another AI Agent (say, the Shopping Agent or “SA”). Its
+    primary functions include understanding the user's needs, discovering
+    products, interacting with merchants to build a cart, and obtaining the
+    user's signed authorization to initiate a payment related task.</li>
+<li><strong>The User’s Credentials Provider (CP)</strong>: A specialized entity responsible
+    for the secure management and execution of payments credentials (e.g. a
+    digital Wallet). It holds knowledge of the User's available payment methods,
+    gets user consent (if deemed necessary) to share credentials with the SA,
+    selects the optimal payment method based on user preferences and transaction
+    context, and handles payment scenarios like errors, declines and transaction
+    challenges gracefully.</li>
+<li><strong>The Remote or Merchant Endpoint (ME)</strong>: A web interface, MCP endpoint or
+    an AI agent operating on behalf of an entity which expects to receive a
+    payment in return for offering products or services. Its objectives are to
+    showcase products/services, provide information, negotiate the contents of a
+    cart with a Shopping Agent, and confirm that it has enough information about
+    the user’s intent to deliver the right products/services.</li>
+<li><strong>The Merchant Payment Processor Endpoint (MPP)</strong>: The Merchant Payment
+    Processor (web, API, MCP or AI Agent) may be the same as the Merchant if the
+    Merchant has all the capabilities to fulfill this role. The MPP constructs
+    the txn auth message which can be sent to the payment ecosystem for
+    authorization.</li>
+<li><strong>Network and Issuer</strong>: The provider of the payment network and issuer of
+    payment credentials to the human user. The Credentials Provider may need to
+    interact with the network for issuance of specific tokens for AI agent
+    transactions and the Merchant/PSP may submit these transactions for
+    authorization to issuers via the networks.</li>
 </ul>
 <p><img alt="Roles &amp; Responsibilities" src="../assets/roles_responsibilities.png" /></p>
 <h3 id="32-the-flow-of-trust">3.2 The Flow of Trust<a class="headerlink" href="#32-the-flow-of-trust" title="Permanent link">&para;</a></h3>
 <h4 id="321-short-term">3.2.1 Short Term<a class="headerlink" href="#321-short-term" title="Permanent link">&para;</a></h4>
-<p>In the immediate future, payment ecosystem trust will be established through manually curated allow lists of approved agents.</p>
+<p>In the immediate future, payment ecosystem trust will be established through
+manually curated allow lists of approved agents.</p>
 <ul>
-<li>The Shopping Agent may choose to work with a trusted registry of Credential Providers</li>
-<li>The Credential Provider may choose to work with a trusted registry of Shopping Agents</li>
-<li>The Shopping Agent will define which merchants it can safely support. This may be through pre-established integrations or real-time discovery via web-crawling or other agentic capabilities. Inversely, merchants may also have a trust registry of Shopping Agents.</li>
+<li>The Shopping Agent may choose to work with a trusted registry of Credential
+    Providers</li>
+<li>The Credential Provider may choose to work with a trusted registry of
+    Shopping Agents</li>
+<li>The Shopping Agent will define which merchants it can safely support. This
+    may be through pre-established integrations or real-time discovery via
+    web-crawling or other agentic capabilities. Inversely, merchants may also
+    have a trust registry of Shopping Agents.</li>
 </ul>
-<p>These registries are decentralized and manually curated by the entity owners (<em>e.g. Shopping Agent provider decides that they want to allowlist limited popular credentials providers but not any others</em>). This is less work than the industry current approach of point-to-point integrations where there is development work required for every bespoke integration.</p>
+<p>These registries are decentralized and manually curated by the entity owners
+(<em>e.g. Shopping Agent provider decides that they want to allowlist limited
+popular credentials providers but not any others</em>). This is less work than the
+industry current approach of point-to-point integrations where there is
+development work required for every bespoke integration.</p>
 <p><img alt="Shopping Surface Trust" src="../assets/shopping_surface_trust.png" /></p>
 <p><img alt="Merchant Surface Trust" src="../assets/merchant_surface_trust.png" /></p>
 <h4 id="322-long-term">3.2.2 Long Term<a class="headerlink" href="#322-long-term" title="Permanent link">&para;</a></h4>
-<p>In the long term, we anticipate that both MCP and A2A protocols will incorporate additional methods for asserting the identities of both the Agent and the User it represents. This will enable Merchant or Shopping Agents to identify a Credentials Provider and facilitate the real-time establishment of trust between them. Consequently, the Credentials Provider can verify that a Shopping Agent is operating on behalf of <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#106;&#111;&#104;&#110;&#100;&#111;&#101;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;">&#106;&#111;&#104;&#110;&#100;&#111;&#101;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;</a>, and that a specific merchant endpoint is genuinely representing a real merchant. Similarly, the Credentials Provider should be trusted by the Shopping Agent &amp; Merchant Endpoint to be authentic and to appropriately represent <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#106;&#111;&#104;&#110;&#100;&#111;&#101;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;">&#106;&#111;&#104;&#110;&#100;&#111;&#101;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;</a>. This trust framework will leverage and extend established web standards such as HTTPS, DNS ownership, mTLS, and API key-exchange.</p>
+<p>In the long term, we anticipate that both MCP and A2A protocols will incorporate
+additional methods for asserting the identities of both the Agent and the User
+it represents. This will enable Merchant or Shopping Agents to identify a
+Credentials Provider and facilitate the real-time establishment of trust between
+them. Consequently, the Credentials Provider can verify that a Shopping Agent is
+operating on behalf of <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#106;&#111;&#104;&#110;&#100;&#111;&#101;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;">&#106;&#111;&#104;&#110;&#100;&#111;&#101;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;</a>, and that a specific merchant
+endpoint is genuinely representing a real merchant. Similarly, the Credentials
+Provider should be trusted by the Shopping Agent &amp; Merchant Endpoint to be
+authentic and to appropriately represent <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#106;&#111;&#104;&#110;&#100;&#111;&#101;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;">&#106;&#111;&#104;&#110;&#100;&#111;&#101;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;</a>. This trust
+framework will leverage and extend established web standards such as HTTPS, DNS
+ownership, mTLS, and API key-exchange.</p>
 <h2 id="section-4-trust-anchors-verifiable-credentials-mandates">Section 4: Trust Anchors: Verifiable Credentials &amp; Mandates<a class="headerlink" href="#section-4-trust-anchors-verifiable-credentials-mandates" title="Permanent link">&para;</a></h2>
-<p>The central innovation of this protocol is the mechanism by which it engineers trust into a distributed and potentially adversarial environment. This is accomplished through the interplay of a set of standardized, cryptographically secure data objects known as Verifiable Credentials (VCs).</p>
+<p>The central innovation of this protocol is the mechanism by which it engineers
+trust into a distributed and potentially adversarial environment. This is
+accomplished through the interplay of a set of standardized, cryptographically
+secure data objects known as Verifiable Credentials (VCs).</p>
 <h3 id="41-the-language-of-trust-verifiable-credentials-vcs">4.1 The Language of Trust: Verifiable Credentials (VCs)<a class="headerlink" href="#41-the-language-of-trust-verifiable-credentials-vcs" title="Permanent link">&para;</a></h3>
-<p>Verifiable Credentials are the standardized data structures used to convey trusted information between agents. They are tamper-evident, non-disputable, portable, and cryptographically signed digital objects that serve as the building blocks of a transaction. The primary VCs in this framework are the Cart Mandate, the Intent Mandate and the Payment Mandate.</p>
+<p>Verifiable Credentials are the standardized data structures used to convey
+trusted information between agents. They are tamper-evident, non-disputable,
+portable, and cryptographically signed digital objects that serve as the
+building blocks of a transaction. The primary VCs in this framework are the Cart
+Mandate, the Intent Mandate and the Payment Mandate.</p>
 <h4 id="411-the-cart-mandate">4.1.1 The Cart Mandate<a class="headerlink" href="#411-the-cart-mandate" title="Permanent link">&para;</a></h4>
-<p>The Cart Mandate is the foundational credential that captures the user's authorization for a purchase when the human is present at the time of purchase (<a href="#51-human-present-transaction">see illustrative user journey</a>). It is generated by the Merchant based on the user's request and is cryptographically signed by the user, typically using a hardware-backed key on their device with in-session authentication. This signature binds the user's identity and authorization to their intent. The Cart Mandate is a structured object containing critical parameters that define the scope of the transaction.</p>
+<p>The Cart Mandate is the foundational credential that captures the user's
+authorization for a purchase when the human is present at the time of purchase
+(<a href="#51-human-present-transaction">see illustrative user journey</a>). It is
+generated by the Merchant based on the user's request and is cryptographically
+signed by the user, typically using a hardware-backed key on their device with
+in-session authentication. This signature binds the user's identity and
+authorization to their intent. The Cart Mandate is a structured object
+containing critical parameters that define the scope of the transaction.</p>
 <p>A Cart Mandate contains the following bound information:</p>
 <ul>
-<li>Payer and Payee Information: Verifiable identities for the user, the merchant, and their respective Credential Providers.</li>
-<li>Payment Method: A tokenized representation of the single, specific payment method to be charged, as selected by the Credentials Provider and confirmed by the user.</li>
-<li>Risk Payload: A container for risk-related signals required by merchants, payment processors and issuers</li>
-<li>Transaction Details: The final, exact transaction products, destination (email or physical address), amount and currency.</li>
+<li>Payer and Payee Information: Verifiable identities for the user, the
+    merchant, and their respective Credential Providers.</li>
+<li>Payment Method: A tokenized representation of the single, specific payment
+    method to be charged, as selected by the Credentials Provider and confirmed
+    by the user.</li>
+<li>Risk Payload: A container for risk-related signals required by merchants,
+    payment processors and issuers</li>
+<li>Transaction Details: The final, exact transaction products, destination
+    (email or physical address), amount and currency.</li>
 <li>If applicable, the conditions under which the purchase can be refundable</li>
 </ul>
 <h4 id="412-the-intent-mandate">4.1.2 The Intent Mandate<a class="headerlink" href="#412-the-intent-mandate" title="Permanent link">&para;</a></h4>
-<p>The Intent Mandate is a separate verifiable credential which is critical for scenarios where the human is not present at actual transaction time (<a href="#52-human-not-present-transaction">see how this plugs into the “human not present” journey</a>). It serves as the final, non-repudiable authorization to execute a purchase in the user’s absence. It is generated by the Shopping Agent based on the user's request and is cryptographically signed by the user, typically using a hardware-backed key on their device.</p>
-<p>An Intent Mandate may contain the following bound information (<em>not that some of it may vary depending on human-present and human-not-present scenario</em>):</p>
+<p>The Intent Mandate is a separate verifiable credential which is critical for
+scenarios where the human is not present at actual transaction time
+(<a href="#52-human-not-present-transaction">see how this plugs into the “human not present” journey</a>).
+It serves as the final, non-repudiable authorization to execute a purchase in
+the user’s absence. It is generated by the Shopping Agent based on the user's
+request and is cryptographically signed by the user, typically using a
+hardware-backed key on their device.</p>
+<p>An Intent Mandate may contain the following bound information (<em>not that some of
+it may vary depending on human-present and human-not-present scenario</em>):</p>
 <ul>
-<li>Payer and Payee Information: Verifiable identities for the user, the merchant, and their respective Credential Providers.</li>
-<li>Chargeable Payment Methods: A list or category of payment methods the user has authorized for the transaction.</li>
-<li>Risk Payload: A container for risk-related signals required by merchants, payment processors and issuers</li>
-<li>Shopping Intent: Parameters defining the purchase, such as product categories, or specific SKUs and relevant purchase decision criteria like refundability.</li>
-<li>Prompt Playback: The Agent’s understanding of the User’s prompt in natural language.</li>
+<li>Payer and Payee Information: Verifiable identities for the user, the
+    merchant, and their respective Credential Providers.</li>
+<li>Chargeable Payment Methods: A list or category of payment methods the user
+    has authorized for the transaction.</li>
+<li>Risk Payload: A container for risk-related signals required by merchants,
+    payment processors and issuers</li>
+<li>Shopping Intent: Parameters defining the purchase, such as product
+    categories, or specific SKUs and relevant purchase decision criteria like
+    refundability.</li>
+<li>Prompt Playback: The Agent’s understanding of the User’s prompt in natural
+    language.</li>
 <li>Time-to-Live (TTL): An expiration time for the mandate's validity.</li>
 </ul>
 <h4 id="413-the-payment-mandate-for-ai-agent-visibility-to-payments-ecosystem">4.1.3 The Payment Mandate for AI Agent Visibility to Payments Ecosystem<a class="headerlink" href="#413-the-payment-mandate-for-ai-agent-visibility-to-payments-ecosystem" title="Permanent link">&para;</a></h4>
-<p>While the Cart and Intent mandates are required by the merchant to fulfill the order, separately the protocol provides additional visibility into the agentic transaction to the payments ecosystem. For this purpose, a verifiable credential “PaymentMandate” (<em>bound to Cart/Intent mandate but containing separate information</em>) may be shared with the network/issuer along with the standard transaction authorization messages. The PaymentMandate’s goal is to help the network/issuer build trust into the agentic transaction and it contains the below information.</p>
+<p>While the Cart and Intent mandates are required by the merchant to fulfill the
+order, separately the protocol provides additional visibility into the agentic
+transaction to the payments ecosystem. For this purpose, a verifiable credential
+“PaymentMandate” (<em>bound to Cart/Intent mandate but containing separate
+information</em>) may be shared with the network/issuer along with the standard
+transaction authorization messages. The PaymentMandate’s goal is to help the
+network/issuer build trust into the agentic transaction and it contains the
+below information.</p>
 <ul>
-<li>AI Agent presence and transaction modality (Human Present v/s Not Present) signals must always be shared</li>
-<li>With user consent, the issuer and/or network may contractually enforce rules which require the sharing of additional information present in Cart and/or Intent Mandates for purposes such as fraud prevention.</li>
-<li>At time of disputes, merchants may use the full cart and/or intent mandates as evidence during representment with the network/issuer as defined by network rules.</li>
+<li>AI Agent presence and transaction modality (Human Present v/s Not Present)
+    signals must always be shared</li>
+<li>With user consent, the issuer and/or network may contractually enforce rules
+    which require the sharing of additional information present in Cart and/or
+    Intent Mandates for purposes such as fraud prevention.</li>
+<li>At time of disputes, merchants may use the full cart and/or intent mandates
+    as evidence during representment with the network/issuer as defined by
+    network rules.</li>
 </ul>
-<p>This architecture represents a significant evolution from traditional, imperative API calls (e.g., <code>create_order</code>) to a model of "contractual conversation." The protocol messages are not simply commands; they are steps in a formal, auditable negotiation that culminates in a binding digital contract. This declarative, consensus-driven model is inherently more secure and robust for the complex, multi-party interactions that will define the agentic era, providing a far stronger foundation for trust and dispute resolution than any client-server API model can offer and paves the way for future security enhancements like Digital Payment Credentials and other cryptographic approaches.</p>
+<p>This architecture represents a significant evolution from traditional,
+imperative API calls (e.g., <code>create_order</code>) to a model of "contractual
+conversation." The protocol messages are not simply commands; they are steps in
+a formal, auditable negotiation that culminates in a binding digital contract.
+This declarative, consensus-driven model is inherently more secure and robust
+for the complex, multi-party interactions that will define the agentic era,
+providing a far stronger foundation for trust and dispute resolution than any
+client-server API model can offer and paves the way for future security
+enhancements like Digital Payment Credentials and other cryptographic
+approaches.</p>
 <h2 id="section-5-core-user-journeys">Section 5: Core User Journeys<a class="headerlink" href="#section-5-core-user-journeys" title="Permanent link">&para;</a></h2>
 <h3 id="51-human-present-transaction">5.1 Human Present Transaction<a class="headerlink" href="#51-human-present-transaction" title="Permanent link">&para;</a></h3>
-<p>Human delegates a task to an AI Agent which requires a payment to be made (say, shopping) and human is available when the payment has to be authorized. A typical (but not only) way this may happen is as below:</p>
+<p>Human delegates a task to an AI Agent which requires a payment to be made (say,
+shopping) and human is available when the payment has to be authorized. A
+typical (but not only) way this may happen is as below:</p>
 <ul>
 <li>
-<p>Setup: The User may set up a connection between their preferred Shopping Agent &amp; any of the supported Credential Providers. This may require the User to authenticate themselves on a surface owned by the Credential Provider.</p>
+<p>Setup: The User may set up a connection between their preferred Shopping
+    Agent &amp; any of the supported Credential Providers. This may require the User
+    to authenticate themselves on a surface owned by the Credential Provider.</p>
 </li>
 <li>
-<p>Discovery &amp; Negotiation: The User provides a shopping task to their chosen AI Agent (<em>which may activate a specialized Shopping Agent to complete the task</em>). The Shopping Agent interacts with one or more Merchants to assemble a cart that satisfies the User's request. This may include the ability for the merchant to provide loyalty, offers, cross-sell and up-sell information (<em>via the integration between the Shopping Agent &amp; Merchant</em>) which the Shopping Agent should represent to the user .</p>
+<p>Discovery &amp; Negotiation: The User provides a shopping task to their chosen
+    AI Agent (<em>which may activate a specialized Shopping Agent to complete the
+    task</em>). The Shopping Agent interacts with one or more Merchants to assemble
+    a cart that satisfies the User's request. This may include the ability for
+    the merchant to provide loyalty, offers, cross-sell and up-sell information
+    (<em>via the integration between the Shopping Agent &amp; Merchant</em>) which the
+    Shopping Agent should represent to the user .</p>
 </li>
 <li>
-<p>Merchant Validates Cart: A SKU or set of SKUs are authorized by the User for purchase. This is communicated by the Shopping Agent to the Merchant to initiate order creation. The Merchant must sign the Cart that they create for a user, signaling that they will fulfill this cart.</p>
+<p>Merchant Validates Cart: A SKU or set of SKUs are authorized by the User for
+    purchase. This is communicated by the Shopping Agent to the Merchant to
+    initiate order creation. The Merchant must sign the Cart that they create
+    for a user, signaling that they will fulfill this cart.</p>
 </li>
 <li>
-<p>Provide Payment Methods: The Shopping Agent may provide the payment context to the Credentials Provider and request an applicable payment method (shared as a reference or in encrypted form), along with any loyalty/discount information which may be relevant for the payment method selection (<em>say, card points which can be redeemed towards the txn</em>).</p>
+<p>Provide Payment Methods: The Shopping Agent may provide the payment context
+    to the Credentials Provider and request an applicable payment method (shared
+    as a reference or in encrypted form), along with any loyalty/discount
+    information which may be relevant for the payment method selection (<em>say,
+    card points which can be redeemed towards the txn</em>).</p>
 </li>
 <li>
-<p>Show Cart: The Shopping Agent presents the final cart and applicable payment method to the user in a trusted surface and the user can approve it via an authentication process.</p>
+<p>Show Cart: The Shopping Agent presents the final cart and applicable payment
+    method to the user in a trusted surface and the user can approve it via an
+    authentication process.</p>
 </li>
 <li>
-<p>Sign &amp; Pay: The user’s signed approval must create a cryptographically signed “Cart Mandate”. This mandate contains the explicit goods being purchased &amp; their confirmation of purchase. It is shared with the Merchant so they can use this as evidence in case of disputes. Separately, the PaymentMandate (<em>containing agent involvement &amp; Human-Present signals</em>) may be shared with the network &amp; issuer for transaction authorization.</p>
+<p>Sign &amp; Pay: The user’s signed approval must create a cryptographically
+    signed “Cart Mandate”. This mandate contains the explicit goods being
+    purchased &amp; their confirmation of purchase. It is shared with the Merchant
+    so they can use this as evidence in case of disputes. Separately, the
+    PaymentMandate (<em>containing agent involvement &amp; Human-Present signals</em>) may
+    be shared with the network &amp; issuer for transaction authorization.</p>
 </li>
 <li>
-<p>Payment Execution: The payment subset of the “Cart Mandate” must be conveyed to the Credential provider and Merchant to complete the transaction. There may be multiple ways this might happen. For example,</p>
+<p>Payment Execution: The payment subset of the “Cart Mandate” must be conveyed
+    to the Credential provider and Merchant to complete the transaction. There
+    may be multiple ways this might happen. For example,</p>
 <ul>
-<li>The Shopping Agent (SA) may request Credentials Provider to complete a payment with the Merchant OR,</li>
-<li>the SA may submit an order with the merchant, triggering a payment authorization flow where the merchant/PSP requests payment method from the Credentials Provider.</li>
+<li>The Shopping Agent (SA) may request Credentials Provider to complete a
+    payment with the Merchant OR,</li>
+<li>the SA may submit an order with the merchant, triggering a payment
+    authorization flow where the merchant/PSP requests payment method from
+    the Credentials Provider.</li>
 </ul>
 </li>
 <li>
-<p>Send Transaction to Issuer: The Merchant or PSP routes the transaction to the issuer or the network within which the payment method operates. The transaction packet may be appended with AI agent presence signals ensuring network/issuer get visibility into agentic transactions.</p>
+<p>Send Transaction to Issuer: The Merchant or PSP routes the transaction to
+    the issuer or the network within which the payment method operates. The
+    transaction packet may be appended with AI agent presence signals ensuring
+    network/issuer get visibility into agentic transactions.</p>
 </li>
 <li>
-<p>Challenge: Any party (issuer, credential provider, merchant etc.) may choose to challenge the transaction through existing mechanisms like 3DS2. This challenge needs to be presented to the user by the User Agent (<em>an example of this would be a hosted 3DS</em>) and may require a redirect to a trusted surface to complete.</p>
+<p>Challenge: Any party (issuer, credential provider, merchant etc.) may choose
+    to challenge the transaction through existing mechanisms like 3DS2. This
+    challenge needs to be presented to the user by the User Agent (<em>an example
+    of this would be a hosted 3DS</em>) and may require a redirect to a trusted
+    surface to complete.</p>
 </li>
 <li>
-<p>Resolve Challenge: The user should have a way to resolve the challenge on a trusted surface (say, banking app, website etc.)</p>
+<p>Resolve Challenge: The user should have a way to resolve the challenge on a
+    trusted surface (say, banking app, website etc.)</p>
 </li>
 <li>
-<p>Authorize Transaction: The issuer approves the payment and confirms success back. This is communicated to the User and the Merchant so that the order can be fulfilled. A payment receipt is shared with the Credential Provider confirming the transaction result. In case of a decline, that can also be appropriately communicated.</p>
+<p>Authorize Transaction: The issuer approves the payment and confirms success
+    back. This is communicated to the User and the Merchant so that the order
+    can be fulfilled. A payment receipt is shared with the Credential Provider
+    confirming the transaction result. In case of a decline, that can also be
+    appropriately communicated.</p>
 </li>
 </ul>
 <h3 id="52-human-not-present-transaction">5.2 Human Not Present Transaction<a class="headerlink" href="#52-human-not-present-transaction" title="Permanent link">&para;</a></h3>
-<p>Human delegates a task to an AI Agent which requires a payment to be made (say, shopping) and human wants the AI Agent to proceed with the payment in their absence. Some canonical scenarios here could be “<em>buy these shoes for me when the price drops below $100</em>” or “<em>buy 2 tickets to this concert as soon as they become available, make sure we’re close to the main stage but don’t spend more than $1000</em>”.</p>
+<p>Human delegates a task to an AI Agent which requires a payment to be made (say,
+shopping) and human wants the AI Agent to proceed with the payment in their
+absence. Some canonical scenarios here could be “<em>buy these shoes for me when
+the price drops below $100</em>” or “<em>buy 2 tickets to this concert as soon as they
+become available, make sure we’re close to the main stage but don’t spend more
+than $1000</em>”.</p>
 <p>Key changes from the Human Present modality are noted below:</p>
 <ol>
 <li>
-<p>“Cart Prompt Not Required”: The Agent must repeat back to the User what they think they are expected to purchase. The User must approve this and confirm that they would like the agent to proceed with the purchase in their absence. This is done by the User going through in-session authentication (biometric etc.) to confirm their intent.</p>
+<p>“Cart Prompt Not Required”: The Agent must repeat back to the User what they
+   think they are expected to purchase. The User must approve this and confirm
+   that they would like the agent to proceed with the purchase in their absence.
+   This is done by the User going through in-session authentication (biometric
+   etc.) to confirm their intent.</p>
 </li>
 <li>
-<p>“Intent Mandate” is signed by the user instead of the “Cart Mandate” in “Human Not Present” scenarios. “Intent Mandate” includes the natural language description of the user’s intent as understood by the AI Agent. This is signed by the user and shared with the Merchant so they can decide if they are able to fulfill the user’s requirement.</p>
+<p>“Intent Mandate” is signed by the user instead of the “Cart Mandate” in
+   “Human Not Present” scenarios. “Intent Mandate” includes the natural language
+   description of the user’s intent as understood by the AI Agent. This is
+   signed by the user and shared with the Merchant so they can decide if they
+   are able to fulfill the user’s requirement.</p>
 </li>
 <li>
-<p>Merchant can force user confirmation: If the Merchant is unsure about their ability to fulfill the user’s needs, they can force the user to come back into session to confirm. Here, the merchant can require either (i) the user select from among a set of SKUs presented to them or (ii) provide answers to additional questions that the merchant needs to know. (i) can lead to creation of Human-Present cart mandate and (ii) can lead to updating the “intent mandate” with more information. This ensures that the Merchants get more confidence on the user’s intent if they are unsure. Merchants may balance transaction conversion rates with returns/user dissatisfaction to decide when they want to force users to provide additional confirmation.</p>
+<p>Merchant can force user confirmation: If the Merchant is unsure about their
+   ability to fulfill the user’s needs, they can force the user to come back
+   into session to confirm. Here, the merchant can require either (i) the user
+   select from among a set of SKUs presented to them or (ii) provide answers to
+   additional questions that the merchant needs to know. (i) can lead to
+   creation of Human-Present cart mandate and (ii) can lead to updating the
+   “intent mandate” with more information. This ensures that the Merchants get
+   more confidence on the user’s intent if they are unsure. Merchants may
+   balance transaction conversion rates with returns/user dissatisfaction to
+   decide when they want to force users to provide additional confirmation.</p>
 </li>
 </ol>
 <p>Example Scenario</p>
 <ul>
-<li>User says to SA: "Buy 2 tickets to <em>\&lt;this concert&gt;</em> from <em>\&lt;this merchant&gt;</em> as soon as they become available for the Vegas show in July. Your budget is $1000 and we’d like to be as close to the main stage as possible"</li>
-<li>User signs this as an Intent Mandate allowing the SA to purchase in the user’s absence.</li>
-<li>Merchant receives this intent mandate and then they can say "I have 3 variations of seating which fulfill this criteria and I don’t know which one the user wants. The intent mandate is not sufficient for me to fulfill this order".</li>
-<li>The merchant can respond to the SA and say that I want to show the user the final 3 options.</li>
-<li>SA notifies the user that their presence is needed before the txn can be initiated. User sees the 3 options, picks one and can now sign a "Cart Mandate" which gives the merchant evidence that the user knows exactly what they are getting.</li>
+<li>User says to SA: "Buy 2 tickets to <em>\&lt;this concert&gt;</em> from <em>\&lt;this
+    merchant&gt;</em> as soon as they become available for the Vegas show in July.
+    Your budget is $1000 and we’d like to be as close to the main stage as
+    possible"</li>
+<li>User signs this as an Intent Mandate allowing the SA to purchase in the
+    user’s absence.</li>
+<li>Merchant receives this intent mandate and then they can say "I have 3
+    variations of seating which fulfill this criteria and I don’t know which one
+    the user wants. The intent mandate is not sufficient for me to fulfill this
+    order".</li>
+<li>The merchant can respond to the SA and say that I want to show the user the
+    final 3 options.</li>
+<li>SA notifies the user that their presence is needed before the txn can be
+    initiated. User sees the 3 options, picks one and can now sign a "Cart
+    Mandate" which gives the merchant evidence that the user knows exactly what
+    they are getting.</li>
 </ul>
-<p>Alternatively, the merchant may have decided to fulfill the order with the cheapest tickets which meet the criteria. This would be up to the merchant and they can decide when they want to bring the user back into session and when they are able to fulfill the order without bringing the user back.</p>
+<p>Alternatively, the merchant may have decided to fulfill the order with the
+cheapest tickets which meet the criteria. This would be up to the merchant and
+they can decide when they want to bring the user back into session and when they
+are able to fulfill the order without bringing the user back.</p>
 <h3 id="53-payment-method-addition">5.3 Payment Method Addition<a class="headerlink" href="#53-payment-method-addition" title="Permanent link">&para;</a></h3>
-<p>Depending on their risk appetite, merchants should have the ability to require a minimum level of security associated with the payment method if it’s going to be accepted for an agentic transaction. Payment networks may also define security or tokenization requirements for agentic transactions which should be enforced by the merchant before a transaction can be initiated.</p>
-<p>If the User initiates a purchase request with a Shopping Agent without having any eligible payment methods with their Credentials Provider, the CP should be able to provide instruction to the User via the Shopping Agent on setting up a payment method and making it ready for agentic transactions. This may require a tokenization flow which the user may have to perform on a trusted Payments surface owned by the Credentials Provider or the network/issuer.</p>
+<p>Depending on their risk appetite, merchants should have the ability to require a
+minimum level of security associated with the payment method if it’s going to be
+accepted for an agentic transaction. Payment networks may also define security
+or tokenization requirements for agentic transactions which should be enforced
+by the merchant before a transaction can be initiated.</p>
+<p>If the User initiates a purchase request with a Shopping Agent without having
+any eligible payment methods with their Credentials Provider, the CP should be
+able to provide instruction to the User via the Shopping Agent on setting up a
+payment method and making it ready for agentic transactions. This may require a
+tokenization flow which the user may have to perform on a trusted Payments
+surface owned by the Credentials Provider or the network/issuer.</p>
 <h3 id="54-payment-method-selection">5.4 Payment Method Selection<a class="headerlink" href="#54-payment-method-selection" title="Permanent link">&para;</a></h3>
-<p>The merchant will define what payment methods they accept and the associated fees. If applicable, the merchant will also declare what processor they use. If the payment method is a push payment method, the merchant will define where to push funds to. Once in the context of a cart, the merchant can define the subset of supported payment methods.</p>
-<p>The merchant can also declare that they already have user payment methods stored “on file” in which case the Shopping Agent may not need to use a Credentials Provider.</p>
-<p>The Credentials Provider knows what payment methods the user has available. The Shopping Agent will be able to inquire about the user’s payment methods to ensure that the user payment methods are compatible with the Merchant’s accepted payment methods.</p>
+<p>The merchant will define what payment methods they accept and the associated
+fees. If applicable, the merchant will also declare what processor they use. If
+the payment method is a push payment method, the merchant will define where to
+push funds to. Once in the context of a cart, the merchant can define the subset
+of supported payment methods.</p>
+<p>The merchant can also declare that they already have user payment methods stored
+“on file” in which case the Shopping Agent may not need to use a Credentials
+Provider.</p>
+<p>The Credentials Provider knows what payment methods the user has available. The
+Shopping Agent will be able to inquire about the user’s payment methods to
+ensure that the user payment methods are compatible with the Merchant’s accepted
+payment methods.</p>
 <h3 id="55-transaction-challenges">5.5 Transaction Challenges<a class="headerlink" href="#55-transaction-challenges" title="Permanent link">&para;</a></h3>
-<p>Any player in the ecosystem can require a user challenge during a payment flow. For v0.1, this will be a redirect challenge passed back to the Shopping Agent to surface to the User. The User will be redirected to a trusted surface to complete the challenge. This will allow for current user challenges like 3DS2, or OTPs to be used as challenges for agentic transactions.</p>
-<p>The Credential Provider should be aware when a challenge is performed, so that the information of a successful challenge-type can be passed to the relevant entities (merchants &amp; issuers) ensuring the user is not challenged twice if the issuer or merchant already trusts the completed challenges. For the “Human Not Present” scenario, a transaction challenge will force the user to come into session. All existing risk systems that merchants, networks &amp; issuers have instituted, should still be able to reason over the data they are receiving and identify when the challenges are needed, ensuring backward compatibility.</p>
+<p>Any player in the ecosystem can require a user challenge during a payment flow.
+For v0.1, this will be a redirect challenge passed back to the Shopping Agent to
+surface to the User. The User will be redirected to a trusted surface to
+complete the challenge. This will allow for current user challenges like 3DS2,
+or OTPs to be used as challenges for agentic transactions.</p>
+<p>The Credential Provider should be aware when a challenge is performed, so that
+the information of a successful challenge-type can be passed to the relevant
+entities (merchants &amp; issuers) ensuring the user is not challenged twice if the
+issuer or merchant already trusts the completed challenges. For the “Human Not
+Present” scenario, a transaction challenge will force the user to come into
+session. All existing risk systems that merchants, networks &amp; issuers have
+instituted, should still be able to reason over the data they are receiving and
+identify when the challenges are needed, ensuring backward compatibility.</p>
 <h2 id="section-6-enabling-dispute-resolution">Section 6: Enabling Dispute Resolution<a class="headerlink" href="#section-6-enabling-dispute-resolution" title="Permanent link">&para;</a></h2>
-<p>A clear and predictable framework for handling disputed transactions is paramount for the adoption of any new payment protocol by financial institutions, merchants, and users. This protocol is designed to provide a certified, evidence-based system for assigning accountability.</p>
+<p>A clear and predictable framework for handling disputed transactions is
+paramount for the adoption of any new payment protocol by financial
+institutions, merchants, and users. This protocol is designed to provide a
+certified, evidence-based system for assigning accountability.</p>
 <h3 id="core-principles">Core Principles<a class="headerlink" href="#core-principles" title="Permanent link">&para;</a></h3>
 <p>The foundational principles are that accountability should</p>
 <ol>
-<li>Stay similar to existing regulations and processes as much as possible, innovate only where needed</li>
-<li>Follow verifiable proof using the cryptographic chain of evidence which creates a non-repudiable audit trail</li>
-<li>Land on a real-world entity (user, merchant or issuer) for the vast majority of cases and only land on an AI Agent if a load bearing decision made by the AI Agent is determined to be wrong (such as, Agent Account Takeover leading to purchases on behalf of a good user by a fraudster).</li>
+<li>Stay similar to existing regulations and processes as much as possible,
+   innovate only where needed</li>
+<li>Follow verifiable proof using the cryptographic chain of evidence which
+   creates a non-repudiable audit trail</li>
+<li>Land on a real-world entity (user, merchant or issuer) for the vast majority
+   of cases and only land on an AI Agent if a load bearing decision made by the
+   AI Agent is determined to be wrong (such as, Agent Account Takeover leading
+   to purchases on behalf of a good user by a fraudster).</li>
 </ol>
-<p>In the event of a dispute, the network adjudicator (Card Network, e-Wallet provider, govt agency etc.) can receive additional information from the Merchant, including the cart, hash, and cart/intent mandate along with the evidence which they already collect. The adjudicator can then make a decision on whether the user approved the final cart and the merchant delivered what the user requested.</p>
-<p>This process is consciously kept similar to existing dispute flows, especially in the Card network, allowing merchants to plug in additional evidence which supports them in disputes allowing them to participate in agentic transactions with confidence.</p>
-<p>The following table outlines how liability could be allocated in several common failure scenarios, based on the evidence available within the protocol. Note that every payment network will define its own liability contracts and so this table only provides a helpful guide, not a binding contract of any kind.</p>
+<p>In the event of a dispute, the network adjudicator (Card Network, e-Wallet
+provider, govt agency etc.) can receive additional information from the
+Merchant, including the cart, hash, and cart/intent mandate along with the
+evidence which they already collect. The adjudicator can then make a decision on
+whether the user approved the final cart and the merchant delivered what the
+user requested.</p>
+<p>This process is consciously kept similar to existing dispute flows, especially
+in the Card network, allowing merchants to plug in additional evidence which
+supports them in disputes allowing them to participate in agentic transactions
+with confidence.</p>
+<p>The following table outlines how liability could be allocated in several common
+failure scenarios, based on the evidence available within the protocol. Note
+that every payment network will define its own liability contracts and so this
+table only provides a helpful guide, not a binding contract of any kind.</p>
 <p>Table 6.1: New Evidence in Common Scenarios</p>
 <table>
 <thead>
@@ -2055,8 +2376,14 @@
 </tbody>
 </table>
 <h2 id="section-7-technical-implementation">Section 7: Technical Implementation<a class="headerlink" href="#section-7-technical-implementation" title="Permanent link">&para;</a></h2>
-<p>Based on the roadmap defined at the beginning of this document, this section will focus on the technical implementation for the Human-Present scenario in the specific case where all entities are Agentic - User/Shopping Agent, Merchant, and Credentials Provider. This would mean that these entities leverage the <a href="https://a2a-protocol.org/">A2A protocol</a> for information exchange.</p>
-<p>We consider MCP to be equally important and plan to follow up with reference implementations where some entities may be MCP very soon after publishing the first version of the specifications.</p>
+<p>Based on the roadmap defined at the beginning of this document, this section
+will focus on the technical implementation for the Human-Present scenario in the
+specific case where all entities are Agentic - User/Shopping Agent, Merchant,
+and Credentials Provider. This would mean that these entities leverage the
+<a href="https://a2a-protocol.org/">A2A protocol</a> for information exchange.</p>
+<p>We consider MCP to be equally important and plan to follow up with reference
+implementations where some entities may be MCP very soon after publishing the
+first version of the specifications.</p>
 <h3 id="71-illustrative-transaction-flow">7.1 Illustrative Transaction Flow<a class="headerlink" href="#71-illustrative-transaction-flow" title="Permanent link">&para;</a></h3>
 <pre class="mermaid"><code>---
 config:
@@ -2123,16 +2450,35 @@ sequenceDiagram
     sa  -&gt;&gt; user: 32. Purchase completed + receipt</code></pre>
 <p>Some salient points of the flow diagram:</p>
 <ul>
-<li>Step 4: The user may need to provide a shipping address or the Shopping Agent may already have it based on the user's preferences/settings. This is to ensure the price in the cart is final. All selections that may alter a cart price must be completed prior to the CartMandate being able to be created.</li>
-<li>Step 6: The cart mandate is first signed by the merchant entity (not an Agent) to guarantee they will fulfill the order based on the SKU, price and shipping information. This ensures that the user sees a cart (in step 12) which the merchant has confirmed to fulfill.</li>
-<li>Step 10: Payment Options may be received from a Credentials Provider or may be supplied by the merchant directly in case they already stored payment method information.</li>
-<li>Step 13: The user may be required to step up their payment method through a security/tokenization flow if the payment network has specific security/tokenization requirements for AI Agent transactions.</li>
-<li>Step 14: The PaymentMandate contains information that can be appended to the existing transaction authorization packet which will provide visibility to PSP/Networks/Issuers that the transaction had AI Agent involvement and its modality (Human Present or Human Not Present).<ul>
-<li>Note that this is distinct from the “Cart Mandate” which contains all the information which a merchant requires to fulfill the order.</li>
+<li>Step 4: The user may need to provide a shipping address or the Shopping
+    Agent may already have it based on the user's preferences/settings. This is
+    to ensure the price in the cart is final. All selections that may alter a
+    cart price must be completed prior to the CartMandate being able to be
+    created.</li>
+<li>Step 6: The cart mandate is first signed by the merchant entity (not an
+    Agent) to guarantee they will fulfill the order based on the SKU, price and
+    shipping information. This ensures that the user sees a cart (in step 12)
+    which the merchant has confirmed to fulfill.</li>
+<li>Step 10: Payment Options may be received from a Credentials Provider or may
+    be supplied by the merchant directly in case they already stored payment
+    method information.</li>
+<li>Step 13: The user may be required to step up their payment method through a
+    security/tokenization flow if the payment network has specific
+    security/tokenization requirements for AI Agent transactions.</li>
+<li>Step 14: The PaymentMandate contains information that can be appended to the
+    existing transaction authorization packet which will provide visibility to
+    PSP/Networks/Issuers that the transaction had AI Agent involvement and its
+    modality (Human Present or Human Not Present).<ul>
+<li>Note that this is distinct from the “Cart Mandate” which contains all
+    the information which a merchant requires to fulfill the order.</li>
 </ul>
 </li>
-<li>Step 15: This is the load bearing step where the user verifies everything and proceed to make a purchase</li>
-<li>Step 21: While not shown in the diagram we expect the PSP to send the transaction authorization message (along with the PaymentMandate) to supporting networks/issuers, allowing these parties to reason over the transactions and make a decision (approve/deny/challenge).</li>
+<li>Step 15: This is the load bearing step where the user verifies everything
+    and proceed to make a purchase</li>
+<li>Step 21: While not shown in the diagram we expect the PSP to send the
+    transaction authorization message (along with the PaymentMandate) to
+    supporting networks/issuers, allowing these parties to reason over the
+    transactions and make a decision (approve/deny/challenge).</li>
 </ul>
 <h3 id="72-code-samples">7.2 Code Samples<a class="headerlink" href="#72-code-samples" title="Permanent link">&para;</a></h3>
 <h4 id="sample-merchant-agent-card">Sample Merchant Agent Card<a class="headerlink" href="#sample-merchant-agent-card" title="Permanent link">&para;</a></h4>
@@ -2144,13 +2490,13 @@ sequenceDiagram
 </span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">      </span><span class="p">{</span>
 </span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">        </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Supports the A2A payments extension.&quot;</span><span class="p">,</span>
 </span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">        </span><span class="nt">&quot;required&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">        </span><span class="nt">&quot;uri&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://google-a2a.github.io/A2A/ext/payments/v1&quot;</span><span class="p">,</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">        </span><span class="nt">&quot;uri&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://google-a2a.github.io/A2A/ext/payments/v1&quot;</span>
 </span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">      </span><span class="p">},</span>
 </span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">      </span><span class="p">{</span>
 </span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">        </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Supports the Visa payment method extension&quot;</span><span class="p">,</span>
 </span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">        </span><span class="nt">&quot;required&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
-</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">        </span><span class="nt">&quot;uri&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://visa.github.io/paymentmethod/types/v1&quot;</span><span class="p">,</span>
-</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">      </span><span class="p">},</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">        </span><span class="nt">&quot;uri&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://visa.github.io/paymentmethod/types/v1&quot;</span>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">      </span><span class="p">}</span>
 </span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">    </span><span class="p">]</span>
 </span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">  </span><span class="p">},</span>
 </span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">  </span><span class="nt">&quot;skills&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
@@ -2158,11 +2504,11 @@ sequenceDiagram
 </span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="w">      </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;search_catalog&quot;</span><span class="p">,</span>
 </span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="w">      </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Search Catalog&quot;</span><span class="p">,</span>
 </span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="w">      </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Finds items in the merchant&#39;s catalog&quot;</span><span class="p">,</span>
-</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="w">      </span><span class="nt">&quot;tags&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;merchant&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;search&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;catalog&quot;</span><span class="p">],</span>
+</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="w">      </span><span class="nt">&quot;tags&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;merchant&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;search&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;catalog&quot;</span><span class="p">]</span>
 </span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="w">    </span><span class="p">}</span>
 </span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="w">  </span><span class="p">],</span>
 </span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a><span class="w">  </span><span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://example.com/a2a/merchant_agent&quot;</span><span class="p">,</span>
-</span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a><span class="w">  </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1.0.0&quot;</span><span class="p">,</span>
+</span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a><span class="w">  </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1.0.0&quot;</span>
 </span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a><span class="p">}</span>
 </span></code></pre></div>
 <h4 id="sample-credential-provider-agent-card">Sample Credential Provider Agent Card<a class="headerlink" href="#sample-credential-provider-agent-card" title="Permanent link">&para;</a></h4>
@@ -2174,13 +2520,13 @@ sequenceDiagram
 </span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">      </span><span class="p">{</span>
 </span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">        </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Supports the A2A payments extension.&quot;</span><span class="p">,</span>
 </span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">        </span><span class="nt">&quot;required&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
-</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">        </span><span class="nt">&quot;uri&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://google-a2a.github.io/A2A/extensions/payments/v1&quot;</span><span class="p">,</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">        </span><span class="nt">&quot;uri&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://google-a2a.github.io/A2A/extensions/payments/v1&quot;</span>
 </span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">      </span><span class="p">},</span>
 </span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">      </span><span class="p">{</span>
 </span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">        </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Supports the Visa payment method extension&quot;</span><span class="p">,</span>
 </span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">        </span><span class="nt">&quot;required&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
-</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">        </span><span class="nt">&quot;uri&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://visa.github.io/paymentmethod/types/v1&quot;</span><span class="p">,</span>
-</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="w">      </span><span class="p">},</span>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">        </span><span class="nt">&quot;uri&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://visa.github.io/paymentmethod/types/v1&quot;</span>
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="w">      </span><span class="p">}</span>
 </span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="w">    </span><span class="p">]</span>
 </span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="w">  </span><span class="p">},</span>
 </span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="w">  </span><span class="nt">&quot;security&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
@@ -2194,12 +2540,12 @@ sequenceDiagram
 </span><span id="__span-1-26"><a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a><span class="w">        </span><span class="nt">&quot;authorizationCode&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-1-27"><a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a><span class="w">          </span><span class="nt">&quot;authorizationUrl&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://example.com/auth&quot;</span><span class="p">,</span>
 </span><span id="__span-1-28"><a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a><span class="w">          </span><span class="nt">&quot;scopes&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-1-29"><a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a><span class="w">            </span><span class="nt">&quot;get_payment_methods&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;description&quot;</span><span class="p">,</span>
+</span><span id="__span-1-29"><a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a><span class="w">            </span><span class="nt">&quot;get_payment_methods&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;description&quot;</span>
 </span><span id="__span-1-30"><a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a><span class="w">          </span><span class="p">},</span>
-</span><span id="__span-1-31"><a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a><span class="w">          </span><span class="nt">&quot;tokenUrl&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://127.0.0.1:8080/token&quot;</span><span class="p">,</span>
+</span><span id="__span-1-31"><a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a><span class="w">          </span><span class="nt">&quot;tokenUrl&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://127.0.0.1:8080/token&quot;</span>
 </span><span id="__span-1-32"><a id="__codelineno-1-32" name="__codelineno-1-32" href="#__codelineno-1-32"></a><span class="w">        </span><span class="p">}</span>
 </span><span id="__span-1-33"><a id="__codelineno-1-33" name="__codelineno-1-33" href="#__codelineno-1-33"></a><span class="w">      </span><span class="p">},</span>
-</span><span id="__span-1-34"><a id="__codelineno-1-34" name="__codelineno-1-34" href="#__codelineno-1-34"></a><span class="w">      </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;oauth2&quot;</span><span class="p">,</span>
+</span><span id="__span-1-34"><a id="__codelineno-1-34" name="__codelineno-1-34" href="#__codelineno-1-34"></a><span class="w">      </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;oauth2&quot;</span>
 </span><span id="__span-1-35"><a id="__codelineno-1-35" name="__codelineno-1-35" href="#__codelineno-1-35"></a><span class="w">    </span><span class="p">}</span>
 </span><span id="__span-1-36"><a id="__codelineno-1-36" name="__codelineno-1-36" href="#__codelineno-1-36"></a><span class="w">  </span><span class="p">},</span>
 </span><span id="__span-1-37"><a id="__codelineno-1-37" name="__codelineno-1-37" href="#__codelineno-1-37"></a><span class="w">  </span><span class="nt">&quot;skills&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
@@ -2207,17 +2553,17 @@ sequenceDiagram
 </span><span id="__span-1-39"><a id="__codelineno-1-39" name="__codelineno-1-39" href="#__codelineno-1-39"></a><span class="w">      </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;get_eligible_payment_methods&quot;</span><span class="p">,</span>
 </span><span id="__span-1-40"><a id="__codelineno-1-40" name="__codelineno-1-40" href="#__codelineno-1-40"></a><span class="w">      </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Provides a list of payment methods for a purchase.&quot;</span><span class="p">,</span>
 </span><span id="__span-1-41"><a id="__codelineno-1-41" name="__codelineno-1-41" href="#__codelineno-1-41"></a><span class="w">      </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Get Eligible Payment Methods&quot;</span><span class="p">,</span>
-</span><span id="__span-1-42"><a id="__codelineno-1-42" name="__codelineno-1-42" href="#__codelineno-1-42"></a><span class="w">      </span><span class="nt">&quot;tags&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;eligible&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;payment&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;methods&quot;</span><span class="p">],</span>
+</span><span id="__span-1-42"><a id="__codelineno-1-42" name="__codelineno-1-42" href="#__codelineno-1-42"></a><span class="w">      </span><span class="nt">&quot;tags&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;eligible&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;payment&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;methods&quot;</span><span class="p">]</span>
 </span><span id="__span-1-43"><a id="__codelineno-1-43" name="__codelineno-1-43" href="#__codelineno-1-43"></a><span class="w">    </span><span class="p">},</span>
 </span><span id="__span-1-44"><a id="__codelineno-1-44" name="__codelineno-1-44" href="#__codelineno-1-44"></a><span class="w">    </span><span class="p">{</span>
 </span><span id="__span-1-45"><a id="__codelineno-1-45" name="__codelineno-1-45" href="#__codelineno-1-45"></a><span class="w">      </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;get_account_shipping_address&quot;</span><span class="p">,</span>
 </span><span id="__span-1-46"><a id="__codelineno-1-46" name="__codelineno-1-46" href="#__codelineno-1-46"></a><span class="w">      </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Fetches the shipping address in the user&#39;s account.&quot;</span><span class="p">,</span>
 </span><span id="__span-1-47"><a id="__codelineno-1-47" name="__codelineno-1-47" href="#__codelineno-1-47"></a><span class="w">      </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Get Shipping Address&quot;</span><span class="p">,</span>
-</span><span id="__span-1-48"><a id="__codelineno-1-48" name="__codelineno-1-48" href="#__codelineno-1-48"></a><span class="w">      </span><span class="nt">&quot;tags&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;account&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;shipping&quot;</span><span class="p">],</span>
-</span><span id="__span-1-49"><a id="__codelineno-1-49" name="__codelineno-1-49" href="#__codelineno-1-49"></a><span class="w">    </span><span class="p">},</span>
+</span><span id="__span-1-48"><a id="__codelineno-1-48" name="__codelineno-1-48" href="#__codelineno-1-48"></a><span class="w">      </span><span class="nt">&quot;tags&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;account&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;shipping&quot;</span><span class="p">]</span>
+</span><span id="__span-1-49"><a id="__codelineno-1-49" name="__codelineno-1-49" href="#__codelineno-1-49"></a><span class="w">    </span><span class="p">}</span>
 </span><span id="__span-1-50"><a id="__codelineno-1-50" name="__codelineno-1-50" href="#__codelineno-1-50"></a><span class="w">  </span><span class="p">],</span>
 </span><span id="__span-1-51"><a id="__codelineno-1-51" name="__codelineno-1-51" href="#__codelineno-1-51"></a><span class="w">  </span><span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://example.com/a2a/credential_provider&quot;</span><span class="p">,</span>
-</span><span id="__span-1-52"><a id="__codelineno-1-52" name="__codelineno-1-52" href="#__codelineno-1-52"></a><span class="w">  </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1.0.0&quot;</span><span class="p">,</span>
+</span><span id="__span-1-52"><a id="__codelineno-1-52" name="__codelineno-1-52" href="#__codelineno-1-52"></a><span class="w">  </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1.0.0&quot;</span>
 </span><span id="__span-1-53"><a id="__codelineno-1-53" name="__codelineno-1-53" href="#__codelineno-1-53"></a><span class="p">}</span>
 </span></code></pre></div>
 <h4 id="sample-cartmandate">Sample CartMandate<a class="headerlink" href="#sample-cartmandate" title="Permanent link">&para;</a></h4>
@@ -2230,8 +2576,8 @@ sequenceDiagram
 </span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">        </span><span class="p">{</span>
 </span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">          </span><span class="nt">&quot;supported_methods&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CARD&quot;</span><span class="p">,</span>
 </span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">          </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">            </span><span class="nt">&quot;payment_processor_url&quot;</span><span class="p">:</span><span class="s2">&quot;http://example.com/pay&quot;</span>
-</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">          </span><span class="p">},</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">            </span><span class="nt">&quot;payment_processor_url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://example.com/pay&quot;</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">          </span><span class="p">}</span>
 </span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">        </span><span class="p">}</span>
 </span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">      </span><span class="p">],</span>
 </span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="w">      </span><span class="nt">&quot;details&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
@@ -2241,33 +2587,33 @@ sequenceDiagram
 </span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="w">            </span><span class="nt">&quot;label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Nike Air Max 90&quot;</span><span class="p">,</span>
 </span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="w">            </span><span class="nt">&quot;amount&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="w">              </span><span class="nt">&quot;currency&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;USD&quot;</span><span class="p">,</span>
-</span><span id="__span-2-21"><a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a><span class="w">              </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">120.0</span><span class="p">,</span>
+</span><span id="__span-2-21"><a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a><span class="w">              </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">120.0</span>
 </span><span id="__span-2-22"><a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a><span class="w">            </span><span class="p">},</span>
-</span><span id="__span-2-23"><a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a><span class="w">            </span><span class="nt">&quot;pending&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+</span><span id="__span-2-23"><a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a><span class="w">            </span><span class="nt">&quot;pending&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span>
 </span><span id="__span-2-24"><a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a><span class="w">          </span><span class="p">}</span>
 </span><span id="__span-2-25"><a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a><span class="w">        </span><span class="p">],</span>
 </span><span id="__span-2-26"><a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a><span class="w">        </span><span class="nt">&quot;shipping_options&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
 </span><span id="__span-2-27"><a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a><span class="w">        </span><span class="nt">&quot;modifiers&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
 </span><span id="__span-2-28"><a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a><span class="w">        </span><span class="nt">&quot;total&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-2-29"><a id="__codelineno-2-29" name="__codelineno-2-29" href="#__codelineno-2-29"></a><span class="w">          </span><span class="nt">&quot;label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Total&quot;</span><span class="p">,</span>
-</span><span id="__span-2-30"><a id="__codelineno-2-30" name="__codelineno-2-30" href="#__codelineno-2-30"></a><span class="w">            </span><span class="nt">&quot;amount&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-2-31"><a id="__codelineno-2-31" name="__codelineno-2-31" href="#__codelineno-2-31"></a><span class="w">              </span><span class="nt">&quot;currency&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;USD&quot;</span><span class="p">,</span>
-</span><span id="__span-2-32"><a id="__codelineno-2-32" name="__codelineno-2-32" href="#__codelineno-2-32"></a><span class="w">              </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">120.0</span><span class="p">,</span>
-</span><span id="__span-2-33"><a id="__codelineno-2-33" name="__codelineno-2-33" href="#__codelineno-2-33"></a><span class="w">            </span><span class="p">},</span>
-</span><span id="__span-2-34"><a id="__codelineno-2-34" name="__codelineno-2-34" href="#__codelineno-2-34"></a><span class="w">            </span><span class="nt">&quot;pending&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
-</span><span id="__span-2-35"><a id="__codelineno-2-35" name="__codelineno-2-35" href="#__codelineno-2-35"></a><span class="w">        </span><span class="p">},</span>
+</span><span id="__span-2-30"><a id="__codelineno-2-30" name="__codelineno-2-30" href="#__codelineno-2-30"></a><span class="w">          </span><span class="nt">&quot;amount&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-31"><a id="__codelineno-2-31" name="__codelineno-2-31" href="#__codelineno-2-31"></a><span class="w">            </span><span class="nt">&quot;currency&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;USD&quot;</span><span class="p">,</span>
+</span><span id="__span-2-32"><a id="__codelineno-2-32" name="__codelineno-2-32" href="#__codelineno-2-32"></a><span class="w">            </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">120.0</span>
+</span><span id="__span-2-33"><a id="__codelineno-2-33" name="__codelineno-2-33" href="#__codelineno-2-33"></a><span class="w">          </span><span class="p">},</span>
+</span><span id="__span-2-34"><a id="__codelineno-2-34" name="__codelineno-2-34" href="#__codelineno-2-34"></a><span class="w">          </span><span class="nt">&quot;pending&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span>
+</span><span id="__span-2-35"><a id="__codelineno-2-35" name="__codelineno-2-35" href="#__codelineno-2-35"></a><span class="w">        </span><span class="p">}</span>
 </span><span id="__span-2-36"><a id="__codelineno-2-36" name="__codelineno-2-36" href="#__codelineno-2-36"></a><span class="w">      </span><span class="p">},</span>
 </span><span id="__span-2-37"><a id="__codelineno-2-37" name="__codelineno-2-37" href="#__codelineno-2-37"></a><span class="w">      </span><span class="nt">&quot;options&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-2-38"><a id="__codelineno-2-38" name="__codelineno-2-38" href="#__codelineno-2-38"></a><span class="w">        </span><span class="nt">&quot;requestPayerName&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
 </span><span id="__span-2-39"><a id="__codelineno-2-39" name="__codelineno-2-39" href="#__codelineno-2-39"></a><span class="w">        </span><span class="nt">&quot;requestPayerEmail&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
 </span><span id="__span-2-40"><a id="__codelineno-2-40" name="__codelineno-2-40" href="#__codelineno-2-40"></a><span class="w">        </span><span class="nt">&quot;requestPayerPhone&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
 </span><span id="__span-2-41"><a id="__codelineno-2-41" name="__codelineno-2-41" href="#__codelineno-2-41"></a><span class="w">        </span><span class="nt">&quot;requestShipping&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
-</span><span id="__span-2-42"><a id="__codelineno-2-42" name="__codelineno-2-42" href="#__codelineno-2-42"></a><span class="w">        </span><span class="nt">&quot;shippingType&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
-</span><span id="__span-2-43"><a id="__codelineno-2-43" name="__codelineno-2-43" href="#__codelineno-2-43"></a><span class="w">      </span><span class="p">},</span>
-</span><span id="__span-2-44"><a id="__codelineno-2-44" name="__codelineno-2-44" href="#__codelineno-2-44"></a><span class="w">    </span><span class="p">},</span>
+</span><span id="__span-2-42"><a id="__codelineno-2-42" name="__codelineno-2-42" href="#__codelineno-2-42"></a><span class="w">        </span><span class="nt">&quot;shippingType&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span>
+</span><span id="__span-2-43"><a id="__codelineno-2-43" name="__codelineno-2-43" href="#__codelineno-2-43"></a><span class="w">      </span><span class="p">}</span>
+</span><span id="__span-2-44"><a id="__codelineno-2-44" name="__codelineno-2-44" href="#__codelineno-2-44"></a><span class="w">    </span><span class="p">}</span>
 </span><span id="__span-2-45"><a id="__codelineno-2-45" name="__codelineno-2-45" href="#__codelineno-2-45"></a><span class="w">  </span><span class="p">},</span>
 </span><span id="__span-2-46"><a id="__codelineno-2-46" name="__codelineno-2-46" href="#__codelineno-2-46"></a><span class="w">  </span><span class="nt">&quot;merchant_signature&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;sig_merchant_shoes_abc1&quot;</span><span class="p">,</span>
-</span><span id="__span-2-47"><a id="__codelineno-2-47" name="__codelineno-2-47" href="#__codelineno-2-47"></a><span class="w">  </span><span class="nt">&quot;timestamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2025-08-26T19:36:36.377022Z&quot;</span><span class="p">,</span>
+</span><span id="__span-2-47"><a id="__codelineno-2-47" name="__codelineno-2-47" href="#__codelineno-2-47"></a><span class="w">  </span><span class="nt">&quot;timestamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2025-08-26T19:36:36.377022Z&quot;</span>
 </span><span id="__span-2-48"><a id="__codelineno-2-48" name="__codelineno-2-48" href="#__codelineno-2-48"></a><span class="p">}</span>
 </span></code></pre></div>
 <h4 id="sample-paymentmandate">Sample PaymentMandate<a class="headerlink" href="#sample-paymentmandate" title="Permanent link">&para;</a></h4>
@@ -2297,35 +2643,99 @@ sequenceDiagram
 </span><span id="__span-3-24"><a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a><span class="p">}</span>
 </span></code></pre></div>
 <h3 id="73-dispute-flows">7.3 Dispute Flows<a class="headerlink" href="#73-dispute-flows" title="Permanent link">&para;</a></h3>
-<p>The protocol allows merchants to receive additional evidence, in the form of intent and cart mandates. These are secure, immutable JSON blobs which are proof of what was agreed to, by the human and the merchant at time of transaction. These JSONs are signed by a key (say, a device key) which is backed by an entity (say, the issuer) which attests that the key is good.</p>
-<p>In the case of a dispute, this additional evidence along with the public key can be shared with the adjudicating authority allowing them to validate the authenticity of the JSON blob and get access to the specific instructions which led to the purchase. This allows the adjudicator to use this data along with existing disputes data to make decisions on which party may be accountable for the transaction.</p>
+<p>The protocol allows merchants to receive additional evidence, in the form of
+intent and cart mandates. These are secure, immutable JSON blobs which are proof
+of what was agreed to, by the human and the merchant at time of transaction.
+These JSONs are signed by a key (say, a device key) which is backed by an entity
+(say, the issuer) which attests that the key is good.</p>
+<p>In the case of a dispute, this additional evidence along with the public key can
+be shared with the adjudicating authority allowing them to validate the
+authenticity of the JSON blob and get access to the specific instructions which
+led to the purchase. This allows the adjudicator to use this data along with
+existing disputes data to make decisions on which party may be accountable for
+the transaction.</p>
 <h3 id="74-risk-signals">7.4: Risk Signals<a class="headerlink" href="#74-risk-signals" title="Permanent link">&para;</a></h3>
-<p>Every entity in the payments ecosystem has well-defined processes for managing risk and reducing fraud. The protocol does not aim to be opinionated about risk/fraud handling or enforce any changes to well-established systems. This section provides our early thinking into how the landscape may evolve.</p>
-<p>Since the user now interacts with a Shopping Agent, which in turn interacts with Credential Providers and Merchants, there are a few novel implications to consider:</p>
+<p>Every entity in the payments ecosystem has well-defined processes for managing
+risk and reducing fraud. The protocol does not aim to be opinionated about
+risk/fraud handling or enforce any changes to well-established systems. This
+section provides our early thinking into how the landscape may evolve.</p>
+<p>Since the user now interacts with a Shopping Agent, which in turn interacts with
+Credential Providers and Merchants, there are a few novel implications to
+consider:</p>
 <ul>
-<li>User Asynchronicity: The user may no longer be in-session for the entire payment journey.</li>
-<li>Delegated Trust: Actors must now trust an agent to initiate a payment on the user's behalf.</li>
-<li>Mandate-Merchant Matching: Mandates for purchases must be accurately matched to the intended merchant.</li>
-<li>Temporal Gaps: Payment method tokens may be generated significantly before a transaction is executed, creating a window of opportunity for misuse.</li>
-<li>Indirect Trust Establishment: The Credential Provider may not have a direct engagement with the merchant and must rely on the Shopping Agent to establish trust.</li>
-<li>Agent Identity: The Shopping Agent's ID becomes synonymous with a bot's identity, which requires new methods of verification and trust.</li>
+<li>User Asynchronicity: The user may no longer be in-session for the entire
+    payment journey.</li>
+<li>Delegated Trust: Actors must now trust an agent to initiate a payment on the
+    user's behalf.</li>
+<li>Mandate-Merchant Matching: Mandates for purchases must be accurately matched
+    to the intended merchant.</li>
+<li>Temporal Gaps: Payment method tokens may be generated significantly before a
+    transaction is executed, creating a window of opportunity for misuse.</li>
+<li>Indirect Trust Establishment: The Credential Provider may not have a direct
+    engagement with the merchant and must rely on the Shopping Agent to
+    establish trust.</li>
+<li>Agent Identity: The Shopping Agent's ID becomes synonymous with a bot's
+    identity, which requires new methods of verification and trust.</li>
 </ul>
-<p>These changes require each actor to reevaluate how they establish trust and manage risk. The Credential providers must now expand their verification from user and instrument ownership to identifying Shopping Agent as well.</p>
-<p>Similarly, the Merchant's traditional concerns are amplified, leading them to question not only how they can trust the user, but also how they can securely access user instruments, receive payment, and obtain the necessary data in a landscape mediated by an agent.</p>
-<p>The v0.1 implementation includes a Risk field in the JSON exchange between the various entities but it is intentionally left open-ended for now since we expect different players in the industry to assess the right signals which should be included based on different risk appetites and business models.</p>
+<p>These changes require each actor to reevaluate how they establish trust and
+manage risk. The Credential providers must now expand their verification from
+user and instrument ownership to identifying Shopping Agent as well.</p>
+<p>Similarly, the Merchant's traditional concerns are amplified, leading them to
+question not only how they can trust the user, but also how they can securely
+access user instruments, receive payment, and obtain the necessary data in a
+landscape mediated by an agent.</p>
+<p>The v0.1 implementation includes a Risk field in the JSON exchange between the
+various entities but it is intentionally left open-ended for now since we expect
+different players in the industry to assess the right signals which should be
+included based on different risk appetites and business models.</p>
 <h2 id="section-8-looking-ahead-enabling-dynamic-commerce">Section 8: Looking Ahead: Enabling Dynamic Commerce<a class="headerlink" href="#section-8-looking-ahead-enabling-dynamic-commerce" title="Permanent link">&para;</a></h2>
-<p>This protocol does more than just secure simple purchases. Its flexible design provides a foundation for the advanced and dynamic commerce models of the future.</p>
-<p>Imagine a user wants to buy a specific jacket, but the color they want is listed as "unavailable" on the merchant's website. Normally, this is a lost sale. But with this protocol, it is plausible to imagine that the user could tell their agent, "I really want this jacket in green, and I'm willing to pay up to 20% more for it." The agent can then create a signed <strong>Intent Mandate</strong> with these specific details.</p>
-<p>The merchant's agent receives this mandate and, instead of an automatic "out of stock" response, can recognize the high-value intent. It could check back-end inventory for a potential return, place a special order, or even make a production exception. It then presents a new, higher-priced offer back to the user's agent. If the user accepts, <strong>Cart Mandate</strong> and <strong>Payment Mandate</strong> are both signed, and a purchase is completed that would have otherwise been impossible. This allows the merchant to capture a high-intent sale and receive direct, valuable feedback on product demand, turning a dead end into a successful transaction.</p>
+<p>This protocol does more than just secure simple purchases. Its flexible design
+provides a foundation for the advanced and dynamic commerce models of the
+future.</p>
+<p>Imagine a user wants to buy a specific jacket, but the color they want is listed
+as "unavailable" on the merchant's website. Normally, this is a lost sale. But
+with this protocol, it is plausible to imagine that the user could tell their
+agent, "I really want this jacket in green, and I'm willing to pay up to 20%
+more for it." The agent can then create a signed <strong>Intent Mandate</strong> with these
+specific details.</p>
+<p>The merchant's agent receives this mandate and, instead of an automatic "out of
+stock" response, can recognize the high-value intent. It could check back-end
+inventory for a potential return, place a special order, or even make a
+production exception. It then presents a new, higher-priced offer back to the
+user's agent. If the user accepts, <strong>Cart Mandate</strong> and <strong>Payment Mandate</strong> are
+both signed, and a purchase is completed that would have otherwise been
+impossible. This allows the merchant to capture a high-intent sale and receive
+direct, valuable feedback on product demand, turning a dead end into a
+successful transaction.</p>
 <h2 id="section-9-a-call-for-ecosystem-collaboration">Section 9: A Call for Ecosystem Collaboration<a class="headerlink" href="#section-9-a-call-for-ecosystem-collaboration" title="Permanent link">&para;</a></h2>
-<p>The Agent Payments Protocol provides a mechanism for secure payments, but it's part of a larger picture. We acknowledge that there are adjacent problems which need to be solved if we want to provide a truly seamless experience. The protocol leaves these areas open for the ecosystem to innovate. Some of the biggest building blocks are:</p>
+<p>The Agent Payments Protocol provides a mechanism for secure payments, but it's
+part of a larger picture. We acknowledge that there are adjacent problems which
+need to be solved if we want to provide a truly seamless experience. The
+protocol leaves these areas open for the ecosystem to innovate. Some of the
+biggest building blocks are:</p>
 <h3 id="real-time-trust-establishment">Real Time Trust Establishment<a class="headerlink" href="#real-time-trust-establishment" title="Permanent link">&para;</a></h3>
-<p>At the top of the funnel, the Shopping Agent needs to be able to discover Merchant endpoints (either AI Agent or MCP) and establish a high-grade of trust with them so that, later, a payment can be initiated between these parties. In the short term, we expect this to happen through decentralized allowlist of registries which ensure that AI Agents and merchants can establish trust among themselves. Longer term, we expect this to be enabled by new discovery &amp; verification standards.</p>
+<p>At the top of the funnel, the Shopping Agent needs to be able to discover
+Merchant endpoints (either AI Agent or MCP) and establish a high-grade of trust
+with them so that, later, a payment can be initiated between these parties. In
+the short term, we expect this to happen through decentralized allowlist of
+registries which ensure that AI Agents and merchants can establish trust among
+themselves. Longer term, we expect this to be enabled by new discovery &amp;
+verification standards.</p>
 <h3 id="delegated-authorization">Delegated Authorization<a class="headerlink" href="#delegated-authorization" title="Permanent link">&para;</a></h3>
-<p>An agent needs a secure and easy way to get scoped permissions to act on a user's behalf. Early versions can use existing methods like redirects or one-time passcodes. However, the long-term goal is to move toward solutions that offer more granular, time-bound access controls for agents.</p>
+<p>An agent needs a secure and easy way to get scoped permissions to act on a
+user's behalf. Early versions can use existing methods like redirects or
+one-time passcodes. However, the long-term goal is to move toward solutions that
+offer more granular, time-bound access controls for agents.</p>
 <h3 id="issuance-of-trusted-public-keys">Issuance of Trusted Public Keys<a class="headerlink" href="#issuance-of-trusted-public-keys" title="Permanent link">&para;</a></h3>
-<p>The protocol's security relies on information being cryptographically signed by the user and merchant. But this raises a crucial question: how are the public keys that verify these signatures distributed, and why should anyone trust them? Establishing these "roots of trust" is a critical area for innovation. Several exciting pathways could emerge where these keys could be issued by issuers, payment networks, governments, merchants or third-party networks which are trusted by the ecosystem.</p>
-<p>Solving these challenges is a community effort and is essential for unlocking the full, secure potential of agent commerce.</p>
+<p>The protocol's security relies on information being cryptographically signed by
+the user and merchant. But this raises a crucial question: how are the public
+keys that verify these signatures distributed, and why should anyone trust them?
+Establishing these "roots of trust" is a critical area for innovation. Several
+exciting pathways could emerge where these keys could be issued by issuers,
+payment networks, governments, merchants or third-party networks which are
+trusted by the ecosystem.</p>
+<p>Solving these challenges is a community effort and is essential for unlocking
+the full, secure potential of agent commerce.</p>
 <h2 id="glossary">Glossary<a class="headerlink" href="#glossary" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
@@ -2481,7 +2891,10 @@ sequenceDiagram
 </tbody>
 </table>
 <blockquote>
-<p>Copyright 2025 Google LLC. Licensed  under the Apache License, Version 2.0 (the “License”); you may not use this file except in compliance with the License. You may obtain a copy of the License at <a href="https://www.apache.org/licenses/LICENSE-2.0">https://www.apache.org/licenses/LICENSE-2.0</a></p>
+<p>Copyright 2025 Google LLC. Licensed under the Apache License, Version 2.0 (the
+“License”); you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+<a href="https://www.apache.org/licenses/LICENSE-2.0">https://www.apache.org/licenses/LICENSE-2.0</a></p>
 </blockquote>
 
 
